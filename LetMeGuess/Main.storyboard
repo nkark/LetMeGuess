@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="y5D-R2-Ol3">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="uTL-ch-e6a">
+            <objects>
+                <viewController id="pch-SN-IBp" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yya-JX-cXK"/>
+                        <viewControllerLayoutGuide type="bottom" id="PGr-pL-Nws"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="URG-K6-sqB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="scp-hH-h1m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1148.5" y="-2453.5"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="aCq-44-yao">
+            <objects>
+                <viewController id="y5D-R2-Ol3" customClass="GameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7rG-8D-uTr"/>
+                        <viewControllerLayoutGuide type="bottom" id="Adg-yO-BgX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KUU-fg-ReQ" userLabel="Screen View">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LOi-ld-zpd">
+                                <rect key="frame" x="-4" y="20" width="383" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem title="LetMeGuess" id="9kA-dW-ghT"/>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W3Q-Kn-Fag" userLabel="Line View">
+                                <rect key="frame" x="-4" y="64" width="383" height="1"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="34v-ov-oBS"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zur-dR-Vap" userLabel="Game View">
+                                <rect key="frame" x="-4" y="65" width="383" height="602"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zur-dR-Vap" secondAttribute="trailing" constant="-20" id="3wa-JN-GAA"/>
+                            <constraint firstItem="W3Q-Kn-Fag" firstAttribute="leading" secondItem="KUU-fg-ReQ" secondAttribute="leadingMargin" constant="-20" id="8gm-ze-CgP"/>
+                            <constraint firstItem="W3Q-Kn-Fag" firstAttribute="top" secondItem="LOi-ld-zpd" secondAttribute="bottom" id="KqI-EN-fgu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LOi-ld-zpd" secondAttribute="trailing" constant="-20" id="NTt-Wm-cAZ"/>
+                            <constraint firstItem="Zur-dR-Vap" firstAttribute="top" secondItem="W3Q-Kn-Fag" secondAttribute="bottom" id="PJQ-qA-yPa"/>
+                            <constraint firstItem="LOi-ld-zpd" firstAttribute="top" secondItem="7rG-8D-uTr" secondAttribute="bottom" id="R5Y-rm-edd"/>
+                            <constraint firstItem="LOi-ld-zpd" firstAttribute="leading" secondItem="KUU-fg-ReQ" secondAttribute="leadingMargin" constant="-20" id="YV2-vk-DKz"/>
+                            <constraint firstItem="Zur-dR-Vap" firstAttribute="leading" secondItem="KUU-fg-ReQ" secondAttribute="leadingMargin" constant="-20" id="bC2-Z9-el4"/>
+                            <constraint firstItem="Adg-yO-BgX" firstAttribute="top" secondItem="Zur-dR-Vap" secondAttribute="bottom" id="cus-ZK-G8F"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="W3Q-Kn-Fag" secondAttribute="trailing" constant="-20" id="nLl-ZX-vQe"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="pch-SN-IBp" kind="custom" identifier="loginSegue" customClass="AFBlurSegue" id="aWW-P4-QWg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sho-TL-ftN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="652.5" y="-1559.5"/>
+        </scene>
+    </scenes>
+</document>

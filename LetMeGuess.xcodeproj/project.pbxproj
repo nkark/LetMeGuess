@@ -7,24 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		943ED5021BC491480022F35A /* AFBlurSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 943ED4FA1BC491480022F35A /* AFBlurSegue.m */; settings = {ASSET_TAGS = (); }; };
+		943ED5031BC491480022F35A /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 943ED4FC1BC491480022F35A /* GameViewController.m */; settings = {ASSET_TAGS = (); }; };
+		943ED5041BC491480022F35A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 943ED4FE1BC491480022F35A /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
+		943ED5051BC491480022F35A /* Profile_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 943ED4FF1BC491480022F35A /* Profile_Icon.png */; settings = {ASSET_TAGS = (); }; };
+		943ED5061BC491480022F35A /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 943ED5011BC491480022F35A /* UIImage+ImageEffects.m */; settings = {ASSET_TAGS = (); }; };
+		943ED50F1BC491FF0022F35A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943ED50E1BC491FF0022F35A /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		943ED5111BC493980022F35A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943ED5101BC493980022F35A /* Launch Screen.storyboard */; settings = {ASSET_TAGS = (); }; };
 		94C177311BC4792600E4FEB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C177301BC4792600E4FEB3 /* main.m */; };
 		94C177341BC4792600E4FEB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C177331BC4792600E4FEB3 /* AppDelegate.m */; };
-		94C177371BC4792600E4FEB3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C177361BC4792600E4FEB3 /* ViewController.m */; };
-		94C1773A1BC4792600E4FEB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94C177381BC4792600E4FEB3 /* Main.storyboard */; };
 		94C1773C1BC4792600E4FEB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94C1773B1BC4792600E4FEB3 /* Assets.xcassets */; };
-		94C1773F1BC4792600E4FEB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94C1773D1BC4792600E4FEB3 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		943ED4F91BC491480022F35A /* AFBlurSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBlurSegue.h; sourceTree = "<group>"; };
+		943ED4FA1BC491480022F35A /* AFBlurSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBlurSegue.m; sourceTree = "<group>"; };
+		943ED4FB1BC491480022F35A /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		943ED4FC1BC491480022F35A /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		943ED4FD1BC491480022F35A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		943ED4FE1BC491480022F35A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		943ED4FF1BC491480022F35A /* Profile_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Profile_Icon.png; sourceTree = "<group>"; };
+		943ED5001BC491480022F35A /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		943ED5011BC491480022F35A /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		943ED50E1BC491FF0022F35A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		943ED5101BC493980022F35A /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		94C1772C1BC4792600E4FEB3 /* LetMeGuess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetMeGuess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94C177301BC4792600E4FEB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		94C177321BC4792600E4FEB3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		94C177331BC4792600E4FEB3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		94C177351BC4792600E4FEB3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		94C177361BC4792600E4FEB3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		94C177391BC4792600E4FEB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		94C1773B1BC4792600E4FEB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		94C1773E1BC4792600E4FEB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94C177401BC4792600E4FEB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -39,6 +50,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		943ED5091BC491850022F35A /* Blur View */ = {
+			isa = PBXGroup;
+			children = (
+				943ED4F91BC491480022F35A /* AFBlurSegue.h */,
+				943ED4FA1BC491480022F35A /* AFBlurSegue.m */,
+				943ED5001BC491480022F35A /* UIImage+ImageEffects.h */,
+				943ED5011BC491480022F35A /* UIImage+ImageEffects.m */,
+			);
+			name = "Blur View";
+			sourceTree = "<group>";
+		};
+		943ED50A1BC491960022F35A /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				943ED4FD1BC491480022F35A /* LoginViewController.h */,
+				943ED4FE1BC491480022F35A /* LoginViewController.m */,
+			);
+			name = Account;
+			sourceTree = "<group>";
+		};
+		943ED50B1BC491AE0022F35A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				943ED4FF1BC491480022F35A /* Profile_Icon.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		94C177231BC4792600E4FEB3 = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +97,13 @@
 		94C1772E1BC4792600E4FEB3 /* LetMeGuess */ = {
 			isa = PBXGroup;
 			children = (
-				94C177321BC4792600E4FEB3 /* AppDelegate.h */,
-				94C177331BC4792600E4FEB3 /* AppDelegate.m */,
-				94C177351BC4792600E4FEB3 /* ViewController.h */,
-				94C177361BC4792600E4FEB3 /* ViewController.m */,
-				94C177381BC4792600E4FEB3 /* Main.storyboard */,
+				943ED50B1BC491AE0022F35A /* Assets */,
+				943ED50A1BC491960022F35A /* Account */,
+				943ED5091BC491850022F35A /* Blur View */,
+				943ED4FB1BC491480022F35A /* GameViewController.h */,
+				943ED4FC1BC491480022F35A /* GameViewController.m */,
+				943ED50E1BC491FF0022F35A /* Main.storyboard */,
 				94C1773B1BC4792600E4FEB3 /* Assets.xcassets */,
-				94C1773D1BC4792600E4FEB3 /* LaunchScreen.storyboard */,
-				94C177401BC4792600E4FEB3 /* Info.plist */,
 				94C1772F1BC4792600E4FEB3 /* Supporting Files */,
 			);
 			path = LetMeGuess;
@@ -74,7 +112,11 @@
 		94C1772F1BC4792600E4FEB3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				94C177401BC4792600E4FEB3 /* Info.plist */,
+				94C177321BC4792600E4FEB3 /* AppDelegate.h */,
+				94C177331BC4792600E4FEB3 /* AppDelegate.m */,
 				94C177301BC4792600E4FEB3 /* main.m */,
+				943ED5101BC493980022F35A /* Launch Screen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -136,9 +178,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94C1773F1BC4792600E4FEB3 /* LaunchScreen.storyboard in Resources */,
+				943ED5051BC491480022F35A /* Profile_Icon.png in Resources */,
 				94C1773C1BC4792600E4FEB3 /* Assets.xcassets in Resources */,
-				94C1773A1BC4792600E4FEB3 /* Main.storyboard in Resources */,
+				943ED5111BC493980022F35A /* Launch Screen.storyboard in Resources */,
+				943ED50F1BC491FF0022F35A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,32 +192,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94C177371BC4792600E4FEB3 /* ViewController.m in Sources */,
+				943ED5031BC491480022F35A /* GameViewController.m in Sources */,
 				94C177341BC4792600E4FEB3 /* AppDelegate.m in Sources */,
+				943ED5061BC491480022F35A /* UIImage+ImageEffects.m in Sources */,
 				94C177311BC4792600E4FEB3 /* main.m in Sources */,
+				943ED5021BC491480022F35A /* AFBlurSegue.m in Sources */,
+				943ED5041BC491480022F35A /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		94C177381BC4792600E4FEB3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				94C177391BC4792600E4FEB3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		94C1773D1BC4792600E4FEB3 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				94C1773E1BC4792600E4FEB3 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		94C177411BC4792600E4FEB3 /* Debug */ = {
@@ -298,6 +325,7 @@
 				94C177451BC4792600E4FEB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
