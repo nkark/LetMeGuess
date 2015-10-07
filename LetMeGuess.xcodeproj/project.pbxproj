@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		941B62331BC4E6F200CF9AF0 /* AlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 941B62321BC4E6F200CF9AF0 /* AlertUtil.m */; settings = {ASSET_TAGS = (); }; };
+		941B62351BC4F94400CF9AF0 /* loginSuccessCheck.png in Resources */ = {isa = PBXBuildFile; fileRef = 941B62341BC4F94400CF9AF0 /* loginSuccessCheck.png */; settings = {ASSET_TAGS = (); }; };
+		941B62371BC500B600CF9AF0 /* registrationSuccessCheck.png in Resources */ = {isa = PBXBuildFile; fileRef = 941B62361BC500B600CF9AF0 /* registrationSuccessCheck.png */; settings = {ASSET_TAGS = (); }; };
 		943ED5021BC491480022F35A /* AFBlurSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 943ED4FA1BC491480022F35A /* AFBlurSegue.m */; settings = {ASSET_TAGS = (); }; };
 		943ED5031BC491480022F35A /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 943ED4FC1BC491480022F35A /* GameViewController.m */; settings = {ASSET_TAGS = (); }; };
 		943ED5041BC491480022F35A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 943ED4FE1BC491480022F35A /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -42,6 +44,8 @@
 		941B622F1BC4DA1100CF9AF0 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		941B62311BC4E6F200CF9AF0 /* AlertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertUtil.h; sourceTree = "<group>"; };
 		941B62321BC4E6F200CF9AF0 /* AlertUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertUtil.m; sourceTree = "<group>"; };
+		941B62341BC4F94400CF9AF0 /* loginSuccessCheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginSuccessCheck.png; sourceTree = "<group>"; };
+		941B62361BC500B600CF9AF0 /* registrationSuccessCheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = registrationSuccessCheck.png; sourceTree = "<group>"; };
 		943ED4F91BC491480022F35A /* AFBlurSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBlurSegue.h; sourceTree = "<group>"; };
 		943ED4FA1BC491480022F35A /* AFBlurSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBlurSegue.m; sourceTree = "<group>"; };
 		943ED4FB1BC491480022F35A /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 		943ED50B1BC491AE0022F35A /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				941B62361BC500B600CF9AF0 /* registrationSuccessCheck.png */,
+				941B62341BC4F94400CF9AF0 /* loginSuccessCheck.png */,
 				944758F81BC4AD4900390F55 /* gameBackgroundImage.jpg */,
 				944758F41BC4A32F00390F55 /* Abel-Regular.ttf */,
 				944758F21BC4A1C700390F55 /* LetMeGuess_logo.png */,
@@ -281,10 +287,12 @@
 				944758F71BC4A46D00390F55 /* LetMeGuess_whiteLogo.png in Resources */,
 				94C1773C1BC4792600E4FEB3 /* Assets.xcassets in Resources */,
 				944758F91BC4AD4900390F55 /* gameBackgroundImage.jpg in Resources */,
+				941B62351BC4F94400CF9AF0 /* loginSuccessCheck.png in Resources */,
 				943ED5111BC493980022F35A /* Launch Screen.storyboard in Resources */,
 				944758F51BC4A32F00390F55 /* Abel-Regular.ttf in Resources */,
 				943ED50F1BC491FF0022F35A /* Main.storyboard in Resources */,
 				944758F31BC4A1C700390F55 /* LetMeGuess_logo.png in Resources */,
+				941B62371BC500B600CF9AF0 /* registrationSuccessCheck.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,7 +15,6 @@ static UIAlertController *mostRecentAlert;
 @implementation AlertUtil
 
 + (void)showAlertControllerWithMessage:(NSString *)message title:(NSString *)title sender:(UIViewController *)senderVC {
-
     NSDictionary *titleAttrs = @{ NSForegroundColorAttributeName : ALERT_TITLE_COLOR };
     NSDictionary *messageAttrs = @{ NSForegroundColorAttributeName : ALERT_MESSAGE_COLOR };
     NSMutableAttributedString *alertTitle = [[NSMutableAttributedString alloc] initWithString:title attributes:titleAttrs];

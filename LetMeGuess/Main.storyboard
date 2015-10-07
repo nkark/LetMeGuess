@@ -105,6 +105,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="loginButton" destination="41k-AI-84A" id="r3U-zP-Yg9"/>
+                        <outlet property="logoImageView" destination="IXQ-Wt-Zyt" id="n4c-Zz-w0H"/>
                         <outlet property="passwordTextField" destination="fPs-Ej-UvF" id="cgE-Fl-rVv"/>
                         <outlet property="signUpButton" destination="9hw-ky-Phc" id="gRD-mT-4aZ"/>
                         <outlet property="usernameTextField" destination="HpC-16-X5f" id="IaO-Q8-StD"/>
