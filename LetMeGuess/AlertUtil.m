@@ -27,11 +27,11 @@ static UIAlertController *mostRecentAlert;
     if (isShowing) {
         [AlertUtil dismissAlertController:mostRecentAlert completionHandler:^{
             [senderVC presentViewController:alert animated:YES completion:nil];
-            [self performSelector:@selector(dismissAlertController:completionHandler:) withObject:alert afterDelay:2.5];
+            [self performSelector:@selector(dismissAlertController:) withObject:alert afterDelay:2.5];
         }];
     } else {
         [senderVC presentViewController:alert animated:YES completion:nil];
-        [self performSelector:@selector(dismissAlertController:completionHandler:) withObject:alert afterDelay:2.5];
+        [self performSelector:@selector(dismissAlertController:) withObject:alert afterDelay:2.5];
     }
     
     isShowing = YES;
@@ -40,6 +40,11 @@ static UIAlertController *mostRecentAlert;
 
 + (void)dismissAlertController:(UIAlertController *)alertController completionHandler:(void (^)(void))handler {
     [alertController dismissViewControllerAnimated:YES completion:handler];
+    isShowing = NO;
+}
+
++ (void)dismissAlertController:(UIAlertController *)alertController {
+    [alertController dismissViewControllerAnimated:YES completion:nil];
     isShowing = NO;
 }
 

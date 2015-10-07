@@ -34,6 +34,11 @@
     
     [self setupLoginButtons];
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -67,8 +72,8 @@
                                                 [self hideAllAndShowSuccess:YES];
                                             } else {
                                                 if ([[error userInfo][@"error"] isEqualToString:@"invalid login parameters"]) {
-                                                    [AlertUtil showAlertControllerWithMessage:@"Invalid username and/or password. Please try again."
-                                                                                        title:@"Invalid login."
+                                                    [AlertUtil showAlertControllerWithMessage:@""
+                                                                                        title:@"Invalid username and/or password. Please try again."
                                                                                        sender:self];
                                                 }
                                             }
@@ -90,7 +95,7 @@
                 [self hideAllAndShowSuccess:NO];
             } else {
                 NSString *errorString = [error userInfo][@"error"];
-                [AlertUtil showAlertControllerWithMessage:errorString title:@"Registration Error" sender:self];
+                [AlertUtil showAlertControllerWithMessage:@"" title:errorString sender:self];
             }
         }];
         
@@ -120,7 +125,7 @@
     if ([message isEqualToString:@"Success"]) {
         return YES;
     } else {
-        [AlertUtil showAlertControllerWithMessage:message title:@"Wait!" sender:self];
+        [AlertUtil showAlertControllerWithMessage:@"" title:message sender:self];
         return NO;
     }
 }
@@ -189,8 +194,10 @@
                     }];
 }
 
-
-
+- (void)dismissKeyboard {
+    [self.usernameTextField resignFirstResponder];
+    [self.passwordTextField resignFirstResponder];
+}
 #pragma mark - Text Field Delegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

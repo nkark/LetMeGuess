@@ -66,7 +66,8 @@
                 [self showLogin];
             }
         } else {
-            [AlertUtil showAlertControllerWithMessage:@"There was a problem logging out." title:@"Log Out Error" sender:self];
+            NSString *errorString = [error userInfo][@"error"];
+            [AlertUtil showAlertControllerWithMessage:@"" title:errorString sender:self];
         }
     }];
 }
