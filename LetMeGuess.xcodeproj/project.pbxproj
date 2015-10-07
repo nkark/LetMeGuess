@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		941B62331BC4E6F200CF9AF0 /* AlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 941B62321BC4E6F200CF9AF0 /* AlertUtil.m */; settings = {ASSET_TAGS = (); }; };
 		943ED5021BC491480022F35A /* AFBlurSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 943ED4FA1BC491480022F35A /* AFBlurSegue.m */; settings = {ASSET_TAGS = (); }; };
 		943ED5031BC491480022F35A /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 943ED4FC1BC491480022F35A /* GameViewController.m */; settings = {ASSET_TAGS = (); }; };
 		943ED5041BC491480022F35A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 943ED4FE1BC491480022F35A /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -38,6 +39,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		941B622F1BC4DA1100CF9AF0 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		941B62311BC4E6F200CF9AF0 /* AlertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertUtil.h; sourceTree = "<group>"; };
+		941B62321BC4E6F200CF9AF0 /* AlertUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertUtil.m; sourceTree = "<group>"; };
 		943ED4F91BC491480022F35A /* AFBlurSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBlurSegue.h; sourceTree = "<group>"; };
 		943ED4FA1BC491480022F35A /* AFBlurSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFBlurSegue.m; sourceTree = "<group>"; };
 		943ED4FB1BC491480022F35A /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
@@ -100,6 +104,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		941B62301BC4E6D700CF9AF0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				941B62311BC4E6F200CF9AF0 /* AlertUtil.h */,
+				941B62321BC4E6F200CF9AF0 /* AlertUtil.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		943ED5091BC491850022F35A /* Blur View */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,7 +194,9 @@
 		94C1772E1BC4792600E4FEB3 /* LetMeGuess */ = {
 			isa = PBXGroup;
 			children = (
+				941B62301BC4E6D700CF9AF0 /* Utils */,
 				943ED50E1BC491FF0022F35A /* Main.storyboard */,
+				941B622F1BC4DA1100CF9AF0 /* Constants.h */,
 				944758F11BC49E9100390F55 /* Game */,
 				944758F01BC49E7B00390F55 /* Parse */,
 				943ED50B1BC491AE0022F35A /* Assets */,
@@ -283,6 +298,7 @@
 				943ED5031BC491480022F35A /* GameViewController.m in Sources */,
 				94C177341BC4792600E4FEB3 /* AppDelegate.m in Sources */,
 				943ED5061BC491480022F35A /* UIImage+ImageEffects.m in Sources */,
+				941B62331BC4E6F200CF9AF0 /* AlertUtil.m in Sources */,
 				94C177311BC4792600E4FEB3 /* main.m in Sources */,
 				943ED5021BC491480022F35A /* AFBlurSegue.m in Sources */,
 				943ED5041BC491480022F35A /* LoginViewController.m in Sources */,

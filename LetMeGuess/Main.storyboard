@@ -33,11 +33,14 @@
                                     <constraint firstAttribute="width" constant="213" id="k3e-ly-X2m"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HpC-16-X5f">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HpC-16-X5f">
                                 <rect key="frame" x="53" y="272" width="269" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="pch-SN-IBp" id="uXu-EQ-UGm"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41k-AI-84A">
                                 <rect key="frame" x="140.5" y="405" width="94" height="53"/>
@@ -59,12 +62,18 @@
                                 <state key="normal" title="  Sign Up  ">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUpPressed:" destination="pch-SN-IBp" eventType="touchUpInside" id="wCM-NG-RSv"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fPs-Ej-UvF">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fPs-Ej-UvF">
                                 <rect key="frame" x="53" y="338" width="269" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="pch-SN-IBp" id="1Q7-5P-MmD"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <animations/>
@@ -96,7 +105,9 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="loginButton" destination="41k-AI-84A" id="r3U-zP-Yg9"/>
+                        <outlet property="passwordTextField" destination="fPs-Ej-UvF" id="cgE-Fl-rVv"/>
                         <outlet property="signUpButton" destination="9hw-ky-Phc" id="gRD-mT-4aZ"/>
+                        <outlet property="usernameTextField" destination="HpC-16-X5f" id="IaO-Q8-StD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="scp-hH-h1m" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -119,7 +130,14 @@
                                 <rect key="frame" x="-4" y="20" width="383" height="44"/>
                                 <animations/>
                                 <items>
-                                    <navigationItem title="LetMeGuess" id="9kA-dW-ghT"/>
+                                    <navigationItem title="LetMeGuess" id="9kA-dW-ghT">
+                                        <barButtonItem key="rightBarButtonItem" image="Profile_Icon.png" id="T2g-gb-IWg">
+                                            <color key="tintColor" red="0.50677910052910047" green="0.3356217771692947" blue="0.17216060044282822" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="accountPressed:" destination="y5D-R2-Ol3" id="Z50-Bj-KYV"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W3Q-Kn-Fag" userLabel="Line View">
@@ -162,6 +180,7 @@
     </scenes>
     <resources>
         <image name="LetMeGuess_whiteLogo.png" width="275" height="277"/>
+        <image name="Profile_Icon.png" width="30" height="30"/>
         <image name="gameBackgroundImage.jpg" width="375" height="682"/>
     </resources>
 </document>
