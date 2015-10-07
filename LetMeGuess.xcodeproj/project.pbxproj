@@ -28,6 +28,10 @@
 		944758EB1BC49B8600390F55 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944758E61BC49B8600390F55 /* SystemConfiguration.framework */; };
 		944758EE1BC49C7700390F55 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 944758EC1BC49C7700390F55 /* libsqlite3.dylib */; };
 		944758EF1BC49C7700390F55 /* libz.1.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 944758ED1BC49C7700390F55 /* libz.1.dylib */; };
+		944758F31BC4A1C700390F55 /* LetMeGuess_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 944758F21BC4A1C700390F55 /* LetMeGuess_logo.png */; settings = {ASSET_TAGS = (); }; };
+		944758F51BC4A32F00390F55 /* Abel-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 944758F41BC4A32F00390F55 /* Abel-Regular.ttf */; settings = {ASSET_TAGS = (); }; };
+		944758F71BC4A46D00390F55 /* LetMeGuess_whiteLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 944758F61BC4A46D00390F55 /* LetMeGuess_whiteLogo.png */; settings = {ASSET_TAGS = (); }; };
+		944758F91BC4AD4900390F55 /* gameBackgroundImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 944758F81BC4AD4900390F55 /* gameBackgroundImage.jpg */; settings = {ASSET_TAGS = (); }; };
 		94C177311BC4792600E4FEB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C177301BC4792600E4FEB3 /* main.m */; };
 		94C177341BC4792600E4FEB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C177331BC4792600E4FEB3 /* AppDelegate.m */; };
 		94C1773C1BC4792600E4FEB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94C1773B1BC4792600E4FEB3 /* Assets.xcassets */; };
@@ -45,8 +49,8 @@
 		943ED5011BC491480022F35A /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		943ED50E1BC491FF0022F35A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		943ED5101BC493980022F35A /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		944758D41BC49B2600390F55 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		944758D51BC49B2600390F55 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		944758D41BC49B2600390F55 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../Bolts.framework; sourceTree = "<group>"; };
+		944758D51BC49B2600390F55 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../Parse.framework; sourceTree = "<group>"; };
 		944758D81BC49B7400390F55 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		944758D91BC49B7400390F55 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		944758DA1BC49B7400390F55 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -57,8 +61,12 @@
 		944758E41BC49B8600390F55 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		944758E51BC49B8600390F55 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		944758E61BC49B8600390F55 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		944758EC1BC49C7700390F55 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = ../../../../usr/lib/libsqlite3.dylib; sourceTree = "<group>"; };
-		944758ED1BC49C7700390F55 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
+		944758EC1BC49C7700390F55 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = /usr/lib/libsqlite3.dylib; sourceTree = "<absolute>"; };
+		944758ED1BC49C7700390F55 /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = /usr/lib/libz.1.dylib; sourceTree = "<absolute>"; };
+		944758F21BC4A1C700390F55 /* LetMeGuess_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LetMeGuess_logo.png; sourceTree = "<group>"; };
+		944758F41BC4A32F00390F55 /* Abel-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Abel-Regular.ttf"; sourceTree = "<group>"; };
+		944758F61BC4A46D00390F55 /* LetMeGuess_whiteLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LetMeGuess_whiteLogo.png; sourceTree = "<group>"; };
+		944758F81BC4AD4900390F55 /* gameBackgroundImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gameBackgroundImage.jpg; sourceTree = "<group>"; };
 		94C1772C1BC4792600E4FEB3 /* LetMeGuess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetMeGuess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94C177301BC4792600E4FEB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		94C177321BC4792600E4FEB3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -115,17 +123,20 @@
 		943ED50B1BC491AE0022F35A /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				944758F81BC4AD4900390F55 /* gameBackgroundImage.jpg */,
+				944758F41BC4A32F00390F55 /* Abel-Regular.ttf */,
+				944758F21BC4A1C700390F55 /* LetMeGuess_logo.png */,
+				944758F61BC4A46D00390F55 /* LetMeGuess_whiteLogo.png */,
 				943ED4FF1BC491480022F35A /* Profile_Icon.png */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
 		};
-		94C177231BC4792600E4FEB3 = {
+		944758F01BC49E7B00390F55 /* Parse */ = {
 			isa = PBXGroup;
 			children = (
 				944758EC1BC49C7700390F55 /* libsqlite3.dylib */,
 				944758ED1BC49C7700390F55 /* libz.1.dylib */,
-				94C1772E1BC4792600E4FEB3 /* LetMeGuess */,
 				944758E21BC49B8600390F55 /* QuartzCore.framework */,
 				944758E31BC49B8600390F55 /* Security.framework */,
 				944758E41BC49B8600390F55 /* Social.framework */,
@@ -136,9 +147,26 @@
 				944758DA1BC49B7400390F55 /* CFNetwork.framework */,
 				944758DB1BC49B7400390F55 /* CoreGraphics.framework */,
 				944758DC1BC49B7400390F55 /* CoreLocation.framework */,
-				94C1772D1BC4792600E4FEB3 /* Products */,
 				944758D41BC49B2600390F55 /* Bolts.framework */,
 				944758D51BC49B2600390F55 /* Parse.framework */,
+			);
+			name = Parse;
+			sourceTree = "<group>";
+		};
+		944758F11BC49E9100390F55 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				943ED4FB1BC491480022F35A /* GameViewController.h */,
+				943ED4FC1BC491480022F35A /* GameViewController.m */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		94C177231BC4792600E4FEB3 = {
+			isa = PBXGroup;
+			children = (
+				94C1772E1BC4792600E4FEB3 /* LetMeGuess */,
+				94C1772D1BC4792600E4FEB3 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,12 +181,12 @@
 		94C1772E1BC4792600E4FEB3 /* LetMeGuess */ = {
 			isa = PBXGroup;
 			children = (
+				943ED50E1BC491FF0022F35A /* Main.storyboard */,
+				944758F11BC49E9100390F55 /* Game */,
+				944758F01BC49E7B00390F55 /* Parse */,
 				943ED50B1BC491AE0022F35A /* Assets */,
 				943ED50A1BC491960022F35A /* Account */,
 				943ED5091BC491850022F35A /* Blur View */,
-				943ED4FB1BC491480022F35A /* GameViewController.h */,
-				943ED4FC1BC491480022F35A /* GameViewController.m */,
-				943ED50E1BC491FF0022F35A /* Main.storyboard */,
 				94C1773B1BC4792600E4FEB3 /* Assets.xcassets */,
 				94C1772F1BC4792600E4FEB3 /* Supporting Files */,
 			);
@@ -235,9 +263,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				943ED5051BC491480022F35A /* Profile_Icon.png in Resources */,
+				944758F71BC4A46D00390F55 /* LetMeGuess_whiteLogo.png in Resources */,
 				94C1773C1BC4792600E4FEB3 /* Assets.xcassets in Resources */,
+				944758F91BC4AD4900390F55 /* gameBackgroundImage.jpg in Resources */,
 				943ED5111BC493980022F35A /* Launch Screen.storyboard in Resources */,
+				944758F51BC4A32F00390F55 /* Abel-Regular.ttf in Resources */,
 				943ED50F1BC491FF0022F35A /* Main.storyboard in Resources */,
+				944758F31BC4A1C700390F55 /* LetMeGuess_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,9 +18,18 @@
     [super viewDidLoad];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self performSelector:@selector(showLogin) withObject:self afterDelay:0];
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
+}
+
+#pragma mark - Login
+
+- (void)showLogin {
     [self performSegueWithIdentifier:@"loginSegue" sender:self];
 }
 

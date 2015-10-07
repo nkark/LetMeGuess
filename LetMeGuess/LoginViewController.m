@@ -7,8 +7,11 @@
 //
 
 #import "LoginViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface LoginViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+@property (weak, nonatomic) IBOutlet UIButton *signUpButton;
 
 @end
 
@@ -16,17 +19,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setupLoginButtons];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [self performSelector:@selector(dismissLogin) withObject:self afterDelay:2.0];
 }
+
+- (void)setupLoginButtons {
+    self.loginButton.layer.cornerRadius = 10;
+    self.loginButton.clipsToBounds = YES;
+    self.signUpButton.layer.cornerRadius = 10;
+    self.signUpButton.clipsToBounds = YES;
+}
+
+#pragma mark - Login
 
 - (void)dismissLogin {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (IBAction)loginPressed:(id)sender {
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
