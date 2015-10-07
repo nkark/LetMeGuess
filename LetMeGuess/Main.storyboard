@@ -82,8 +82,6 @@
                             <constraint firstItem="HpC-16-X5f" firstAttribute="leading" secondItem="URG-K6-sqB" secondAttribute="leadingMargin" constant="37" id="8bR-ba-eqP"/>
                             <constraint firstItem="HpC-16-X5f" firstAttribute="centerX" secondItem="URG-K6-sqB" secondAttribute="centerX" id="Ajc-VQ-LK0"/>
                             <constraint firstItem="fPs-Ej-UvF" firstAttribute="centerX" secondItem="URG-K6-sqB" secondAttribute="centerX" id="Bgm-lh-v0s"/>
-                            <constraint firstItem="41k-AI-84A" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="URG-K6-sqB" secondAttribute="leadingMargin" constant="100" id="Fps-dz-IO0"/>
-                            <constraint firstItem="9hw-ky-Phc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="URG-K6-sqB" secondAttribute="leadingMargin" constant="100" id="HPO-zh-iID"/>
                             <constraint firstItem="HpC-16-X5f" firstAttribute="top" secondItem="IXQ-Wt-Zyt" secondAttribute="bottom" constant="30" id="HfE-up-1ww"/>
                             <constraint firstItem="9hw-ky-Phc" firstAttribute="centerX" secondItem="URG-K6-sqB" secondAttribute="centerX" id="K2w-tY-gv6"/>
                             <constraint firstItem="41k-AI-84A" firstAttribute="top" secondItem="fPs-Ej-UvF" secondAttribute="bottom" constant="37" id="SKC-BA-SZl"/>
@@ -95,16 +93,11 @@
                             <constraint firstItem="41k-AI-84A" firstAttribute="centerX" secondItem="URG-K6-sqB" secondAttribute="centerX" id="sdJ-ba-GLN"/>
                             <constraint firstItem="fPs-Ej-UvF" firstAttribute="leading" secondItem="URG-K6-sqB" secondAttribute="leadingMargin" constant="37" id="szt-EW-XUg"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Fps-dz-IO0"/>
-                                <exclude reference="HPO-zh-iID"/>
-                            </mask>
-                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="loginButton" destination="41k-AI-84A" id="r3U-zP-Yg9"/>
+                        <outlet property="logoImageTopSpaceConstraint" destination="efq-ba-6XA" id="b3H-4H-LN8"/>
                         <outlet property="logoImageView" destination="IXQ-Wt-Zyt" id="n4c-Zz-w0H"/>
                         <outlet property="passwordTextField" destination="fPs-Ej-UvF" id="cgE-Fl-rVv"/>
                         <outlet property="signUpButton" destination="9hw-ky-Phc" id="gRD-mT-4aZ"/>
@@ -113,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="scp-hH-h1m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1148.5" y="-2453.5"/>
+            <point key="canvasLocation" x="1222.5" y="-1983.5"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="aCq-44-yao">
@@ -136,6 +129,9 @@
                                             <color key="tintColor" red="0.50677910052910047" green="0.3356217771692947" blue="0.17216060044282822" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="accountPressed:" destination="y5D-R2-Ol3" id="Z50-Bj-KYV"/>
+                                                <segue destination="RJK-FY-QC7" kind="popoverPresentation" identifier="accountSegue" popoverAnchorBarButtonItem="T2g-gb-IWg" id="nAt-JE-RRp">
+                                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                                </segue>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -176,12 +172,75 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sho-TL-ftN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="652.5" y="-1559.5"/>
+            <point key="canvasLocation" x="576.5" y="-1565.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="pgh-Vr-7rL">
+            <objects>
+                <viewController id="RJK-FY-QC7" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JFF-bq-G1g"/>
+                        <viewControllerLayoutGuide type="bottom" id="hFJ-8z-Pd4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vs3-av-VWi" userLabel="Screen View">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0K-73-h7g" userLabel="Overall Scroll View">
+                                <rect key="frame" x="-4" y="20" width="383" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UUL-YL-1hm" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="383" height="647"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noPicture.png" translatesAutoresizingMaskIntoConstraints="NO" id="nTi-G4-6gO">
+                                                <rect key="frame" x="23" y="8" width="150" height="150"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="Fmr-a4-9zL"/>
+                                                    <constraint firstAttribute="width" constant="150" id="JfB-uo-Bu1"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="nTi-G4-6gO" firstAttribute="leading" secondItem="UUL-YL-1hm" secondAttribute="leading" constant="23" id="GJD-89-535"/>
+                                            <constraint firstItem="nTi-G4-6gO" firstAttribute="top" secondItem="UUL-YL-1hm" secondAttribute="top" constant="8" id="fKY-8m-dfD"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="UUL-YL-1hm" firstAttribute="leading" secondItem="X0K-73-h7g" secondAttribute="leading" id="0xj-kn-Yh3"/>
+                                    <constraint firstItem="UUL-YL-1hm" firstAttribute="centerX" secondItem="X0K-73-h7g" secondAttribute="centerX" id="JlT-SI-1ck"/>
+                                    <constraint firstAttribute="bottom" secondItem="UUL-YL-1hm" secondAttribute="bottom" id="Oq5-jL-0U9"/>
+                                    <constraint firstItem="UUL-YL-1hm" firstAttribute="centerY" secondItem="X0K-73-h7g" secondAttribute="centerY" id="eD5-5h-hKF"/>
+                                    <constraint firstAttribute="trailing" secondItem="UUL-YL-1hm" secondAttribute="trailing" id="eSa-YI-nJj"/>
+                                    <constraint firstItem="UUL-YL-1hm" firstAttribute="top" secondItem="X0K-73-h7g" secondAttribute="top" id="qlL-hQ-N6N"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="X0K-73-h7g" firstAttribute="leading" secondItem="vs3-av-VWi" secondAttribute="leadingMargin" constant="-20" id="BI1-O7-Cdl"/>
+                            <constraint firstItem="hFJ-8z-Pd4" firstAttribute="top" secondItem="X0K-73-h7g" secondAttribute="bottom" id="E59-nA-9em"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="X0K-73-h7g" secondAttribute="trailing" constant="-20" id="ZdH-BG-eR7"/>
+                            <constraint firstItem="X0K-73-h7g" firstAttribute="top" secondItem="JFF-bq-G1g" secondAttribute="bottom" id="ZuU-b3-gHV"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yuD-iR-HqE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1222.5" y="-1077.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="LetMeGuess_whiteLogo.png" width="275" height="277"/>
         <image name="Profile_Icon.png" width="30" height="30"/>
         <image name="gameBackgroundImage.jpg" width="375" height="682"/>
+        <image name="noPicture.png" width="600" height="600"/>
     </resources>
 </document>

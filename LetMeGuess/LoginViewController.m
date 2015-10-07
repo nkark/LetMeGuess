@@ -23,6 +23,7 @@
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) NSString *password;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *logoImageTopSpaceConstraint;
 @end
 
 @implementation LoginViewController
@@ -31,6 +32,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self registerKeyboard];
     
     [self setupLoginButtons];
     
@@ -194,10 +196,48 @@
                     }];
 }
 
+#pragma mark - Keyboard
+
 - (void)dismissKeyboard {
     [self.usernameTextField resignFirstResponder];
     [self.passwordTextField resignFirstResponder];
 }
+
+- (void)keyboardWillShow {
+    self.logoImageTopSpaceConstraint.constant = -self.logoImageTopSpaceConstraint.constant;
+    [UIView animateWithDuration:0.25
+                          delay:0
+                        options:UIViewAnimationOptionTransitionCrossDissolve
+                     animations:^{
+                         [self.view layoutIfNeeded];
+                     }
+                     completion:nil];
+}
+
+- (void)keyboardWillHide {
+    self.logoImageTopSpaceConstraint.constant = -self.logoImageTopSpaceConstraint.constant;
+    [UIView animateWithDuration:0.25
+                          delay:0
+                        options:UIViewAnimationOptionTransitionCrossDissolve
+                     animations:^{
+                         [self.view layoutIfNeeded];
+                     }
+                     completion:nil];
+}
+
+- (void)registerKeyboard {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+}
+
+
 #pragma mark - Text Field Delegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

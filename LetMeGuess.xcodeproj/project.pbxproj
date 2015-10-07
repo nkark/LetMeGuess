@@ -35,6 +35,8 @@
 		944758F51BC4A32F00390F55 /* Abel-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 944758F41BC4A32F00390F55 /* Abel-Regular.ttf */; settings = {ASSET_TAGS = (); }; };
 		944758F71BC4A46D00390F55 /* LetMeGuess_whiteLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 944758F61BC4A46D00390F55 /* LetMeGuess_whiteLogo.png */; settings = {ASSET_TAGS = (); }; };
 		944758F91BC4AD4900390F55 /* gameBackgroundImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 944758F81BC4AD4900390F55 /* gameBackgroundImage.jpg */; settings = {ASSET_TAGS = (); }; };
+		944B95451BC5E30700A0C7AF /* noPicture.png in Resources */ = {isa = PBXBuildFile; fileRef = 944B95441BC5E30700A0C7AF /* noPicture.png */; settings = {ASSET_TAGS = (); }; };
+		944B95481BC5E76800A0C7AF /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 944B95471BC5E76800A0C7AF /* AccountViewController.m */; settings = {ASSET_TAGS = (); }; };
 		94C177311BC4792600E4FEB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C177301BC4792600E4FEB3 /* main.m */; };
 		94C177341BC4792600E4FEB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C177331BC4792600E4FEB3 /* AppDelegate.m */; };
 		94C1773C1BC4792600E4FEB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94C1773B1BC4792600E4FEB3 /* Assets.xcassets */; };
@@ -75,6 +77,9 @@
 		944758F41BC4A32F00390F55 /* Abel-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Abel-Regular.ttf"; sourceTree = "<group>"; };
 		944758F61BC4A46D00390F55 /* LetMeGuess_whiteLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LetMeGuess_whiteLogo.png; sourceTree = "<group>"; };
 		944758F81BC4AD4900390F55 /* gameBackgroundImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = gameBackgroundImage.jpg; sourceTree = "<group>"; };
+		944B95441BC5E30700A0C7AF /* noPicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noPicture.png; sourceTree = "<group>"; };
+		944B95461BC5E76800A0C7AF /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
+		944B95471BC5E76800A0C7AF /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 		94C1772C1BC4792600E4FEB3 /* LetMeGuess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetMeGuess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94C177301BC4792600E4FEB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		94C177321BC4792600E4FEB3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -133,6 +138,8 @@
 			children = (
 				943ED4FD1BC491480022F35A /* LoginViewController.h */,
 				943ED4FE1BC491480022F35A /* LoginViewController.m */,
+				944B95461BC5E76800A0C7AF /* AccountViewController.h */,
+				944B95471BC5E76800A0C7AF /* AccountViewController.m */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -147,6 +154,7 @@
 				944758F21BC4A1C700390F55 /* LetMeGuess_logo.png */,
 				944758F61BC4A46D00390F55 /* LetMeGuess_whiteLogo.png */,
 				943ED4FF1BC491480022F35A /* Profile_Icon.png */,
+				944B95441BC5E30700A0C7AF /* noPicture.png */,
 			);
 			name = Assets;
 			sourceTree = "<group>";
@@ -290,6 +298,7 @@
 				944758F91BC4AD4900390F55 /* gameBackgroundImage.jpg in Resources */,
 				941B62351BC4F94400CF9AF0 /* loginSuccessCheck.png in Resources */,
 				943ED5111BC493980022F35A /* Launch Screen.storyboard in Resources */,
+				944B95451BC5E30700A0C7AF /* noPicture.png in Resources */,
 				944758F51BC4A32F00390F55 /* Abel-Regular.ttf in Resources */,
 				943ED50F1BC491FF0022F35A /* Main.storyboard in Resources */,
 				944758F31BC4A1C700390F55 /* LetMeGuess_logo.png in Resources */,
@@ -310,6 +319,7 @@
 				941B62331BC4E6F200CF9AF0 /* AlertUtil.m in Sources */,
 				94C177311BC4792600E4FEB3 /* main.m in Sources */,
 				943ED5021BC491480022F35A /* AFBlurSegue.m in Sources */,
+				944B95481BC5E76800A0C7AF /* AccountViewController.m in Sources */,
 				943ED5041BC491480022F35A /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
