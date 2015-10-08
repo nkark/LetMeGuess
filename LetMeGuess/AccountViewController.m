@@ -7,6 +7,7 @@
 //
 
 #import "AccountViewController.h"
+#import "AlertUtil.h"
 
 @interface AccountViewController ()
 
@@ -16,9 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    [self setupProfilePicView];
+    
+    if (![PFUser currentUser]) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self setupProfilePicView];
+    }
 }
+
+
 
 #pragma mark - Utility
 
@@ -40,6 +47,11 @@
 */
 
 - (IBAction)donePressed:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)signOutPressed:(id)sender {
+    [PFUser logOut];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

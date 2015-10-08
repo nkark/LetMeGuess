@@ -9,6 +9,8 @@
         <mutableArray key="Abel-Regular.ttf">
             <string>Abel-Regular</string>
             <string>Abel-Regular</string>
+            <string>Abel-Regular</string>
+            <string>Abel-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -33,21 +35,29 @@
                                     <constraint firstAttribute="width" constant="213" id="k3e-ly-X2m"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HpC-16-X5f">
-                                <rect key="frame" x="53" y="272" width="269" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HpC-16-X5f" customClass="JVFloatLabeledTextField">
+                                <rect key="frame" x="53" y="272" width="269" height="42"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="floatingLabelXPadding">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="floatingLabelYPadding">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="delegate" destination="pch-SN-IBp" id="uXu-EQ-UGm"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41k-AI-84A">
-                                <rect key="frame" x="140.5" y="405" width="94" height="53"/>
+                                <rect key="frame" x="139.5" y="429" width="97" height="53"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Abel-Regular" family="Abel" pointSize="32"/>
-                                <state key="normal" title="  Login  ">
+                                <state key="normal" title=" Sign In ">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -55,7 +65,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hw-ky-Phc">
-                                <rect key="frame" x="127" y="487" width="121" height="53"/>
+                                <rect key="frame" x="127" y="511" width="121" height="53"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Abel-Regular" family="Abel" pointSize="32"/>
@@ -66,8 +76,8 @@
                                     <action selector="signUpPressed:" destination="pch-SN-IBp" eventType="touchUpInside" id="wCM-NG-RSv"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fPs-Ej-UvF">
-                                <rect key="frame" x="53" y="338" width="269" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fPs-Ej-UvF" customClass="JVFloatLabeledTextField">
+                                <rect key="frame" x="53" y="350" width="269" height="42"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
@@ -99,9 +109,9 @@
                         <outlet property="loginButton" destination="41k-AI-84A" id="r3U-zP-Yg9"/>
                         <outlet property="logoImageTopSpaceConstraint" destination="efq-ba-6XA" id="b3H-4H-LN8"/>
                         <outlet property="logoImageView" destination="IXQ-Wt-Zyt" id="n4c-Zz-w0H"/>
-                        <outlet property="passwordTextField" destination="fPs-Ej-UvF" id="cgE-Fl-rVv"/>
+                        <outlet property="passwordTextField" destination="fPs-Ej-UvF" id="uDx-EO-330"/>
                         <outlet property="signUpButton" destination="9hw-ky-Phc" id="gRD-mT-4aZ"/>
-                        <outlet property="usernameTextField" destination="HpC-16-X5f" id="IaO-Q8-StD"/>
+                        <outlet property="usernameTextField" destination="HpC-16-X5f" id="89a-9V-3vd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="scp-hH-h1m" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -128,7 +138,6 @@
                                         <barButtonItem key="rightBarButtonItem" image="profile_icon.png" id="T2g-gb-IWg">
                                             <color key="tintColor" red="0.50677910052910047" green="0.3356217771692947" blue="0.17216060044282822" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <action selector="accountPressed:" destination="y5D-R2-Ol3" id="Z50-Bj-KYV"/>
                                                 <segue destination="RJK-FY-QC7" kind="popoverPresentation" identifier="accountSegue" popoverAnchorBarButtonItem="T2g-gb-IWg" id="nAt-JE-RRp">
                                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                                 </segue>
@@ -216,13 +225,34 @@
                                                     <constraint firstAttribute="height" constant="59" id="hs1-6l-oUi"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIK-zX-QWW">
+                                                <rect key="frame" x="241" y="57" width="97" height="52"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" name="Abel-Regular" family="Abel" pointSize="30"/>
+                                                <state key="normal" title="Sign Out">
+                                                    <color key="titleColor" red="0.92463395979020979" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="signOutPressed:" destination="RJK-FY-QC7" eventType="touchUpInside" id="Dbh-VS-72q"/>
+                                                </connections>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLn-EB-KGF">
-                                                <rect key="frame" x="172.5" y="400" width="37" height="38"/>
+                                                <rect key="frame" x="162" y="373" width="58" height="51"/>
                                                 <animations/>
                                                 <constraints>
+                                                    <constraint firstAttribute="height" constant="61" id="Eoa-Aa-A0I"/>
                                                     <constraint firstAttribute="height" constant="38" id="dyX-xa-vZF"/>
+                                                    <constraint firstAttribute="width" constant="96" id="kfG-JV-aQ0"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" name="Abel-Regular" family="Abel" pointSize="30"/>
                                                 <state key="normal" title="Done"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="Eoa-Aa-A0I"/>
+                                                        <exclude reference="dyX-xa-vZF"/>
+                                                        <exclude reference="kfG-JV-aQ0"/>
+                                                    </mask>
+                                                </variation>
                                                 <connections>
                                                     <action selector="donePressed:" destination="RJK-FY-QC7" eventType="touchUpInside" id="vKJ-C0-wu7"/>
                                                 </connections>
@@ -231,15 +261,22 @@
                                         <animations/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstItem="gmL-de-SjP" firstAttribute="top" secondItem="QIK-zX-QWW" secondAttribute="bottom" constant="78" id="2n0-xY-Pxe"/>
                                             <constraint firstItem="Snh-GI-1gC" firstAttribute="top" secondItem="gmL-de-SjP" secondAttribute="bottom" constant="24" id="5jT-O8-UbH"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HLn-EB-KGF" secondAttribute="trailing" constant="20" id="6ov-WB-Imk"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="HLn-EB-KGF" secondAttribute="bottom" constant="20" id="8TQ-vU-Y1d"/>
+                                            <constraint firstItem="HLn-EB-KGF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UUL-YL-1hm" secondAttribute="leading" constant="20" id="C2s-Uf-jVZ"/>
                                             <constraint firstAttribute="trailing" secondItem="gmL-de-SjP" secondAttribute="trailing" id="Dso-8E-uSq"/>
                                             <constraint firstItem="nTi-G4-6gO" firstAttribute="leading" secondItem="UUL-YL-1hm" secondAttribute="leading" constant="23" id="GJD-89-535"/>
                                             <constraint firstAttribute="trailing" secondItem="Snh-GI-1gC" secondAttribute="trailing" id="Gz3-Fg-2F1"/>
-                                            <constraint firstItem="HLn-EB-KGF" firstAttribute="centerX" secondItem="UUL-YL-1hm" secondAttribute="centerX" id="KBb-sP-9gw"/>
-                                            <constraint firstItem="HLn-EB-KGF" firstAttribute="top" secondItem="Snh-GI-1gC" secondAttribute="bottom" constant="71" id="WNO-Q3-A41"/>
                                             <constraint firstItem="Snh-GI-1gC" firstAttribute="leading" secondItem="UUL-YL-1hm" secondAttribute="leading" id="Y1K-i1-u0M"/>
+                                            <constraint firstItem="QIK-zX-QWW" firstAttribute="top" secondItem="UUL-YL-1hm" secondAttribute="top" constant="57" id="YD9-x8-4Hz"/>
                                             <constraint firstItem="gmL-de-SjP" firstAttribute="leading" secondItem="UUL-YL-1hm" secondAttribute="leading" id="dpC-BW-zNm"/>
                                             <constraint firstItem="nTi-G4-6gO" firstAttribute="top" secondItem="UUL-YL-1hm" secondAttribute="top" constant="8" id="fKY-8m-dfD"/>
+                                            <constraint firstItem="HLn-EB-KGF" firstAttribute="top" secondItem="Snh-GI-1gC" secondAttribute="bottom" constant="44" id="j3h-JV-lF8"/>
+                                            <constraint firstAttribute="trailing" secondItem="QIK-zX-QWW" secondAttribute="trailing" constant="45" id="kC1-nO-LZ9"/>
+                                            <constraint firstItem="QIK-zX-QWW" firstAttribute="centerY" secondItem="nTi-G4-6gO" secondAttribute="centerY" id="mTR-sl-T0G"/>
+                                            <constraint firstItem="HLn-EB-KGF" firstAttribute="centerX" secondItem="UUL-YL-1hm" secondAttribute="centerX" id="rMF-Vf-xy5"/>
                                             <constraint firstItem="gmL-de-SjP" firstAttribute="top" secondItem="nTi-G4-6gO" secondAttribute="bottom" constant="29" id="tNi-Ve-9P8"/>
                                         </constraints>
                                     </view>

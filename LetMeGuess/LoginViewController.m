@@ -11,14 +11,15 @@
 #import "Constants.h"
 #import <Parse/Parse.h>
 #import "AlertUtil.h"
+#import "JVFloatLabeledTextField.h"
 
 @interface LoginViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *signUpButton;
-@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *usernameTextField;
+@property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *passwordTextField;
 
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) NSString *password;
@@ -34,7 +35,7 @@
     [super viewDidLoad];
     [self registerKeyboard];
     
-    [self setupLoginButtons];
+    [self setupLoginScreen];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
@@ -48,7 +49,12 @@
     
 }
 
-- (void)setupLoginButtons {
+- (void)setupLoginScreen {
+    [self.usernameTextField setPlaceholder:@"Username" floatingTitle:@"Username"];
+    [self.usernameTextField setFloatingLabelActiveTextColor:[UIColor brownColor]];
+    [self.passwordTextField setPlaceholder:@"Password" floatingTitle:@"Password"];
+    [self.passwordTextField setFloatingLabelActiveTextColor:[UIColor brownColor]];
+    
     self.loginButton.layer.cornerRadius = 10;
     self.loginButton.clipsToBounds = YES;
     self.signUpButton.layer.cornerRadius = 10;
@@ -253,7 +259,6 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.

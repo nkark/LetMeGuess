@@ -40,6 +40,8 @@
 		94C177311BC4792600E4FEB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C177301BC4792600E4FEB3 /* main.m */; };
 		94C177341BC4792600E4FEB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C177331BC4792600E4FEB3 /* AppDelegate.m */; };
 		94C1773C1BC4792600E4FEB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94C1773B1BC4792600E4FEB3 /* Assets.xcassets */; };
+		94FC108E1BC5FBCA00E69BD3 /* JVFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FC108D1BC5FBCA00E69BD3 /* JVFloatLabeledTextField.m */; settings = {ASSET_TAGS = (); }; };
+		94FC10911BC5FC2A00E69BD3 /* NSString+TextDirectionality.m in Sources */ = {isa = PBXBuildFile; fileRef = 94FC10901BC5FC2A00E69BD3 /* NSString+TextDirectionality.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +88,10 @@
 		94C177331BC4792600E4FEB3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		94C1773B1BC4792600E4FEB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		94C177401BC4792600E4FEB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94FC108C1BC5FBCA00E69BD3 /* JVFloatLabeledTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVFloatLabeledTextField.h; sourceTree = "<group>"; };
+		94FC108D1BC5FBCA00E69BD3 /* JVFloatLabeledTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVFloatLabeledTextField.m; sourceTree = "<group>"; };
+		94FC108F1BC5FC2A00E69BD3 /* NSString+TextDirectionality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TextDirectionality.h"; sourceTree = "<group>"; };
+		94FC10901BC5FC2A00E69BD3 /* NSString+TextDirectionality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TextDirectionality.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +214,7 @@
 		94C1772E1BC4792600E4FEB3 /* LetMeGuess */ = {
 			isa = PBXGroup;
 			children = (
+				94FC108B1BC5FBC000E69BD3 /* Floating Text Field */,
 				941B62301BC4E6D700CF9AF0 /* Utils */,
 				943ED50E1BC491FF0022F35A /* Main.storyboard */,
 				941B622F1BC4DA1100CF9AF0 /* Constants.h */,
@@ -232,6 +239,17 @@
 				943ED5101BC493980022F35A /* Launch Screen.storyboard */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		94FC108B1BC5FBC000E69BD3 /* Floating Text Field */ = {
+			isa = PBXGroup;
+			children = (
+				94FC108F1BC5FC2A00E69BD3 /* NSString+TextDirectionality.h */,
+				94FC10901BC5FC2A00E69BD3 /* NSString+TextDirectionality.m */,
+				94FC108C1BC5FBCA00E69BD3 /* JVFloatLabeledTextField.h */,
+				94FC108D1BC5FBCA00E69BD3 /* JVFloatLabeledTextField.m */,
+			);
+			name = "Floating Text Field";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94FC108E1BC5FBCA00E69BD3 /* JVFloatLabeledTextField.m in Sources */,
 				943ED5031BC491480022F35A /* GameViewController.m in Sources */,
 				94C177341BC4792600E4FEB3 /* AppDelegate.m in Sources */,
 				943ED5061BC491480022F35A /* UIImage+ImageEffects.m in Sources */,
@@ -320,6 +339,7 @@
 				94C177311BC4792600E4FEB3 /* main.m in Sources */,
 				943ED5021BC491480022F35A /* AFBlurSegue.m in Sources */,
 				944B95481BC5E76800A0C7AF /* AccountViewController.m in Sources */,
+				94FC10911BC5FC2A00E69BD3 /* NSString+TextDirectionality.m in Sources */,
 				943ED5041BC491480022F35A /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

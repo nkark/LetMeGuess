@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface AccountViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicImageView;
-
 
 @end

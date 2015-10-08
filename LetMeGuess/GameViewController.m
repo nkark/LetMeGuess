@@ -9,10 +9,9 @@
 #import "GameViewController.h"
 #import <Parse/Parse.h>
 #import "AlertUtil.h"
+#import "AccountViewController.h"
 
 @interface GameViewController ()
-
-@property (strong, nonatomic) PFUser *currentUser;
 
 @end
 
@@ -22,7 +21,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.currentUser = [PFUser currentUser];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -33,8 +31,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    if (!self.currentUser) {
+    if (![PFUser currentUser]) {
         [self showLogin];
     }
 }
@@ -47,25 +44,9 @@
 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     UIViewController *destination = segue.destinationViewController;
     destination.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-}
-
-#pragma mark - IBActions
-
-- (IBAction)accountPressed:(id)sender {
-    [PFUser logOutInBackgroundWithBlock:^(NSError *error){
-        if(!error) {
-            if (![PFUser currentUser]) {
-                [self showLogin];
-            }
-        } else {
-            NSString *errorString = [error userInfo][@"error"];
-            [AlertUtil showAlertControllerWithMessage:@"" title:errorString sender:self];
-        }
-    }];
 }
 
 @end
