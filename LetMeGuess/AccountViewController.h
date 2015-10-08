@@ -13,4 +13,9 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicImageView;
 
+@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *editPasswordButton;
+@property (weak, nonatomic) IBOutlet UIButton *editUsernameButton;
+
 @end

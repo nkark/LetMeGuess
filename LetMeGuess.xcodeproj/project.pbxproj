@@ -37,6 +37,7 @@
 		944B95451BC5E30700A0C7AF /* noPicture.png in Resources */ = {isa = PBXBuildFile; fileRef = 944B95441BC5E30700A0C7AF /* noPicture.png */; settings = {ASSET_TAGS = (); }; };
 		944B95481BC5E76800A0C7AF /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 944B95471BC5E76800A0C7AF /* AccountViewController.m */; settings = {ASSET_TAGS = (); }; };
 		945B4B771BC5EAFE00304A7A /* profile_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 945B4B761BC5EAFE00304A7A /* profile_icon.png */; settings = {ASSET_TAGS = (); }; };
+		9496C8B21BC63FF200B6D692 /* userNameChangedSuccess.png in Resources */ = {isa = PBXBuildFile; fileRef = 9496C8B11BC63FF200B6D692 /* userNameChangedSuccess.png */; settings = {ASSET_TAGS = (); }; };
 		94C177311BC4792600E4FEB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C177301BC4792600E4FEB3 /* main.m */; };
 		94C177341BC4792600E4FEB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C177331BC4792600E4FEB3 /* AppDelegate.m */; };
 		94C1773C1BC4792600E4FEB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94C1773B1BC4792600E4FEB3 /* Assets.xcassets */; };
@@ -82,6 +83,7 @@
 		944B95461BC5E76800A0C7AF /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		944B95471BC5E76800A0C7AF /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 		945B4B761BC5EAFE00304A7A /* profile_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_icon.png; sourceTree = "<group>"; };
+		9496C8B11BC63FF200B6D692 /* userNameChangedSuccess.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userNameChangedSuccess.png; sourceTree = "<group>"; };
 		94C1772C1BC4792600E4FEB3 /* LetMeGuess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetMeGuess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94C177301BC4792600E4FEB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		94C177321BC4792600E4FEB3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 		943ED50B1BC491AE0022F35A /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				9496C8B11BC63FF200B6D692 /* userNameChangedSuccess.png */,
 				941B62361BC500B600CF9AF0 /* registrationSuccessCheck.png */,
 				941B62341BC4F94400CF9AF0 /* loginSuccessCheck.png */,
 				944758F81BC4AD4900390F55 /* gameBackgroundImage.jpg */,
@@ -314,6 +317,7 @@
 				94C1773C1BC4792600E4FEB3 /* Assets.xcassets in Resources */,
 				944758F91BC4AD4900390F55 /* gameBackgroundImage.jpg in Resources */,
 				941B62351BC4F94400CF9AF0 /* loginSuccessCheck.png in Resources */,
+				9496C8B21BC63FF200B6D692 /* userNameChangedSuccess.png in Resources */,
 				945B4B771BC5EAFE00304A7A /* profile_icon.png in Resources */,
 				943ED5111BC493980022F35A /* Launch Screen.storyboard in Resources */,
 				944B95451BC5E30700A0C7AF /* noPicture.png in Resources */,

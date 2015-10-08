@@ -141,41 +141,44 @@
 
 - (void)hideAllAndShowSuccess:(BOOL)isLoginCheck {
     [UIView transitionWithView:self.logoImageView
-                      duration:0.3
-                       options:UIViewAnimationOptionTransitionCrossDissolve
-                    animations:nil
+                      duration:1
+                       options:UIViewAnimationOptionTransitionFlipFromLeft
+                    animations:^{
+                        self.logoImageView.hidden = YES;
+                    }
                     completion:nil];
     [UIView transitionWithView:self.usernameTextField
-                      duration:0.3
-                       options:UIViewAnimationOptionTransitionCrossDissolve
-                    animations:nil
+                      duration:1
+                       options:UIViewAnimationOptionTransitionFlipFromRight
+                    animations:^{
+                        self.usernameTextField.hidden = YES;
+                    }
                     completion:nil];
     [UIView transitionWithView:self.passwordTextField
-                      duration:0.3
-                       options:UIViewAnimationOptionTransitionCrossDissolve
-                    animations:nil
+                      duration:1
+                       options:UIViewAnimationOptionTransitionFlipFromLeft
+                    animations:^{
+                        self.passwordTextField.hidden = YES;
+                    }
                     completion:nil];
     [UIView transitionWithView:self.loginButton
-                      duration:0.3
-                       options:UIViewAnimationOptionTransitionCrossDissolve
-                    animations:nil
+                      duration:1
+                       options:UIViewAnimationOptionTransitionFlipFromRight
+                    animations:^{
+                        self.loginButton.hidden = YES;
+                    }
                     completion:nil];
     [UIView transitionWithView:self.signUpButton
-                      duration:0.3
-                       options:UIViewAnimationOptionTransitionCrossDissolve
-                    animations:nil
+                      duration:1
+                       options:UIViewAnimationOptionTransitionFlipFromLeft
+                    animations:^{
+                        self.signUpButton.hidden = YES;
+                    }
                     completion:^(BOOL finished) {
                         if (finished) {
                             [self showLoginSuccessCheck:isLoginCheck];
                         }
                     }];
-    
-    
-    self.logoImageView.hidden = YES;
-    self.usernameTextField.hidden = YES;
-    self.passwordTextField.hidden = YES;
-    self.loginButton.hidden = YES;
-    self.signUpButton.hidden = YES;
 }
 
 - (void)showLoginSuccessCheck:(BOOL)isLoginCheck {
@@ -249,12 +252,6 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
-    
-    if ([self validateInput]) {
-        [self loginPressed:nil];
-        return NO;
-    }
-
     return YES;
 }
 
