@@ -35,7 +35,7 @@
                                     <constraint firstAttribute="width" constant="213" id="k3e-ly-X2m"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HpC-16-X5f" customClass="JVFloatLabeledTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HpC-16-X5f" customClass="JVFloatLabeledTextField">
                                 <rect key="frame" x="53" y="272" width="269" height="42"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -52,7 +52,7 @@
                                     <outlet property="delegate" destination="pch-SN-IBp" id="uXu-EQ-UGm"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41k-AI-84A">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41k-AI-84A">
                                 <rect key="frame" x="139.5" y="429" width="97" height="53"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -64,7 +64,7 @@
                                     <action selector="loginPressed:" destination="pch-SN-IBp" eventType="touchUpInside" id="dnx-7U-FbW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hw-ky-Phc">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hw-ky-Phc">
                                 <rect key="frame" x="127" y="511" width="121" height="53"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -76,7 +76,7 @@
                                     <action selector="signUpPressed:" destination="pch-SN-IBp" eventType="touchUpInside" id="wCM-NG-RSv"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fPs-Ej-UvF" customClass="JVFloatLabeledTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fPs-Ej-UvF" customClass="JVFloatLabeledTextField">
                                 <rect key="frame" x="53" y="350" width="269" height="42"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -223,7 +223,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ayM-vd-vEl" userLabel="Seperator Line">
-                                                        <rect key="frame" x="108" y="2.5" width="1" height="35"/>
+                                                        <rect key="frame" x="108" y="2" width="1" height="35"/>
                                                         <animations/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
@@ -376,9 +376,10 @@
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userNameChangedSuccess.png" translatesAutoresizingMaskIntoConstraints="NO" id="dpW-TJ-MVm" userLabel="Change Succes Check Image View">
-                                                <rect key="frame" x="53" y="554" width="276" height="51"/>
+                                                <rect key="frame" x="53" y="576" width="276" height="51"/>
                                                 <animations/>
                                                 <constraints>
+                                                    <constraint firstAttribute="height" constant="51" id="a1t-NM-Xcc"/>
                                                     <constraint firstAttribute="width" secondItem="dpW-TJ-MVm" secondAttribute="height" multiplier="92:17" id="euS-Xs-Nsj"/>
                                                 </constraints>
                                             </imageView>
@@ -391,11 +392,11 @@
                                             <constraint firstItem="gHr-La-gmz" firstAttribute="leading" secondItem="UUL-YL-1hm" secondAttribute="leading" id="4dZ-nK-gW4"/>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="HLn-EB-KGF" secondAttribute="bottom" constant="20" id="8TQ-vU-Y1d"/>
                                             <constraint firstAttribute="trailing" secondItem="gmL-de-SjP" secondAttribute="trailing" id="Dso-8E-uSq"/>
-                                            <constraint firstAttribute="bottom" secondItem="dpW-TJ-MVm" secondAttribute="bottom" constant="42" id="FOQ-hn-mTc"/>
+                                            <constraint firstAttribute="bottom" secondItem="dpW-TJ-MVm" secondAttribute="bottom" constant="20" id="FOQ-hn-mTc"/>
                                             <constraint firstItem="nTi-G4-6gO" firstAttribute="leading" secondItem="UUL-YL-1hm" secondAttribute="leading" constant="23" id="GJD-89-535"/>
                                             <constraint firstItem="dpW-TJ-MVm" firstAttribute="centerX" secondItem="UUL-YL-1hm" secondAttribute="centerX" id="Slf-At-lRs"/>
                                             <constraint firstItem="QIK-zX-QWW" firstAttribute="top" secondItem="UUL-YL-1hm" secondAttribute="top" constant="57" id="YD9-x8-4Hz"/>
-                                            <constraint firstItem="dpW-TJ-MVm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UUL-YL-1hm" secondAttribute="leading" constant="40" id="YFX-Hu-qCl"/>
+                                            <constraint firstItem="dpW-TJ-MVm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UUL-YL-1hm" secondAttribute="leading" constant="20" id="YFX-Hu-qCl"/>
                                             <constraint firstItem="HLn-EB-KGF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UUL-YL-1hm" secondAttribute="leading" constant="40" id="Yd6-bF-ffc"/>
                                             <constraint firstAttribute="trailing" secondItem="gHr-La-gmz" secondAttribute="trailing" id="YlA-hb-DZi"/>
                                             <constraint firstItem="gmL-de-SjP" firstAttribute="leading" secondItem="UUL-YL-1hm" secondAttribute="leading" id="dpC-BW-zNm"/>
@@ -406,8 +407,13 @@
                                             <constraint firstItem="HLn-EB-KGF" firstAttribute="top" secondItem="gHr-La-gmz" secondAttribute="bottom" constant="40" id="pEa-iz-gSb"/>
                                             <constraint firstItem="HLn-EB-KGF" firstAttribute="centerX" secondItem="UUL-YL-1hm" secondAttribute="centerX" id="rMF-Vf-xy5"/>
                                             <constraint firstItem="gmL-de-SjP" firstAttribute="top" secondItem="nTi-G4-6gO" secondAttribute="bottom" constant="35" id="tNi-Ve-9P8"/>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dpW-TJ-MVm" secondAttribute="trailing" constant="40" id="w4i-Vz-RQn"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dpW-TJ-MVm" secondAttribute="trailing" constant="20" id="w4i-Vz-RQn"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="jNm-cR-50q"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                 </subviews>
                                 <animations/>
