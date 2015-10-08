@@ -34,11 +34,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if (self.currentUser) {
-        [AlertUtil showAlertControllerWithMessage:@"You are logged in!"
-                                            title:@"Login Succesful"
-                                           sender:self];
-    } else {
+    if (!self.currentUser) {
         [self showLogin];
     }
 }

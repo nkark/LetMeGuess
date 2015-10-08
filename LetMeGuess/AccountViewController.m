@@ -16,12 +16,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    [self setupProfilePicView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - Utility
+
+- (void)setupProfilePicView {
+    self.profilePicImageView.layer.cornerRadius = 50;
+    self.profilePicImageView.layer.masksToBounds = YES;
+    self.profilePicImageView.layer.borderWidth = 1.75;
+    self.profilePicImageView.layer.borderColor = [[UIColor grayColor] CGColor];
 }
 
 /*
@@ -33,5 +38,9 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)donePressed:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

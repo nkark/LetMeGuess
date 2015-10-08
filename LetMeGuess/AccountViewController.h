@@ -10,4 +10,7 @@
 
 @interface AccountViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *profilePicImageView;
+
+
 @end

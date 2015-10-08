@@ -13,7 +13,6 @@
 		943ED5021BC491480022F35A /* AFBlurSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 943ED4FA1BC491480022F35A /* AFBlurSegue.m */; settings = {ASSET_TAGS = (); }; };
 		943ED5031BC491480022F35A /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 943ED4FC1BC491480022F35A /* GameViewController.m */; settings = {ASSET_TAGS = (); }; };
 		943ED5041BC491480022F35A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 943ED4FE1BC491480022F35A /* LoginViewController.m */; settings = {ASSET_TAGS = (); }; };
-		943ED5051BC491480022F35A /* Profile_Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 943ED4FF1BC491480022F35A /* Profile_Icon.png */; settings = {ASSET_TAGS = (); }; };
 		943ED5061BC491480022F35A /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 943ED5011BC491480022F35A /* UIImage+ImageEffects.m */; settings = {ASSET_TAGS = (); }; };
 		943ED50F1BC491FF0022F35A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943ED50E1BC491FF0022F35A /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
 		943ED5111BC493980022F35A /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 943ED5101BC493980022F35A /* Launch Screen.storyboard */; settings = {ASSET_TAGS = (); }; };
@@ -37,6 +36,7 @@
 		944758F91BC4AD4900390F55 /* gameBackgroundImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 944758F81BC4AD4900390F55 /* gameBackgroundImage.jpg */; settings = {ASSET_TAGS = (); }; };
 		944B95451BC5E30700A0C7AF /* noPicture.png in Resources */ = {isa = PBXBuildFile; fileRef = 944B95441BC5E30700A0C7AF /* noPicture.png */; settings = {ASSET_TAGS = (); }; };
 		944B95481BC5E76800A0C7AF /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 944B95471BC5E76800A0C7AF /* AccountViewController.m */; settings = {ASSET_TAGS = (); }; };
+		945B4B771BC5EAFE00304A7A /* profile_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 945B4B761BC5EAFE00304A7A /* profile_icon.png */; settings = {ASSET_TAGS = (); }; };
 		94C177311BC4792600E4FEB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C177301BC4792600E4FEB3 /* main.m */; };
 		94C177341BC4792600E4FEB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C177331BC4792600E4FEB3 /* AppDelegate.m */; };
 		94C1773C1BC4792600E4FEB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94C1773B1BC4792600E4FEB3 /* Assets.xcassets */; };
@@ -54,7 +54,6 @@
 		943ED4FC1BC491480022F35A /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		943ED4FD1BC491480022F35A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		943ED4FE1BC491480022F35A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		943ED4FF1BC491480022F35A /* Profile_Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Profile_Icon.png; sourceTree = "<group>"; };
 		943ED5001BC491480022F35A /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		943ED5011BC491480022F35A /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		943ED50E1BC491FF0022F35A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -80,6 +79,7 @@
 		944B95441BC5E30700A0C7AF /* noPicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noPicture.png; sourceTree = "<group>"; };
 		944B95461BC5E76800A0C7AF /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		944B95471BC5E76800A0C7AF /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		945B4B761BC5EAFE00304A7A /* profile_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_icon.png; sourceTree = "<group>"; };
 		94C1772C1BC4792600E4FEB3 /* LetMeGuess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetMeGuess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94C177301BC4792600E4FEB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		94C177321BC4792600E4FEB3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -153,7 +153,7 @@
 				944758F41BC4A32F00390F55 /* Abel-Regular.ttf */,
 				944758F21BC4A1C700390F55 /* LetMeGuess_logo.png */,
 				944758F61BC4A46D00390F55 /* LetMeGuess_whiteLogo.png */,
-				943ED4FF1BC491480022F35A /* Profile_Icon.png */,
+				945B4B761BC5EAFE00304A7A /* profile_icon.png */,
 				944B95441BC5E30700A0C7AF /* noPicture.png */,
 			);
 			name = Assets;
@@ -292,11 +292,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				943ED5051BC491480022F35A /* Profile_Icon.png in Resources */,
 				944758F71BC4A46D00390F55 /* LetMeGuess_whiteLogo.png in Resources */,
 				94C1773C1BC4792600E4FEB3 /* Assets.xcassets in Resources */,
 				944758F91BC4AD4900390F55 /* gameBackgroundImage.jpg in Resources */,
 				941B62351BC4F94400CF9AF0 /* loginSuccessCheck.png in Resources */,
+				945B4B771BC5EAFE00304A7A /* profile_icon.png in Resources */,
 				943ED5111BC493980022F35A /* Launch Screen.storyboard in Resources */,
 				944B95451BC5E30700A0C7AF /* noPicture.png in Resources */,
 				944758F51BC4A32F00390F55 /* Abel-Regular.ttf in Resources */,

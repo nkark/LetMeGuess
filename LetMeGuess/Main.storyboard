@@ -106,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="scp-hH-h1m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1222.5" y="-1983.5"/>
+            <point key="canvasLocation" x="1072.5" y="-2149.5"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="aCq-44-yao">
@@ -125,7 +125,7 @@
                                 <animations/>
                                 <items>
                                     <navigationItem title="LetMeGuess" id="9kA-dW-ghT">
-                                        <barButtonItem key="rightBarButtonItem" image="Profile_Icon.png" id="T2g-gb-IWg">
+                                        <barButtonItem key="rightBarButtonItem" image="profile_icon.png" id="T2g-gb-IWg">
                                             <color key="tintColor" red="0.50677910052910047" green="0.3356217771692947" blue="0.17216060044282822" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="accountPressed:" destination="y5D-R2-Ol3" id="Z50-Bj-KYV"/>
@@ -174,10 +174,10 @@
             </objects>
             <point key="canvasLocation" x="576.5" y="-1565.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Account View Controller-->
         <scene sceneID="pgh-Vr-7rL">
             <objects>
-                <viewController id="RJK-FY-QC7" sceneMemberID="viewController">
+                <viewController id="RJK-FY-QC7" customClass="AccountViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JFF-bq-G1g"/>
                         <viewControllerLayoutGuide type="bottom" id="hFJ-8z-Pd4"/>
@@ -200,12 +200,47 @@
                                                     <constraint firstAttribute="width" constant="150" id="JfB-uo-Bu1"/>
                                                 </constraints>
                                             </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gmL-de-SjP" userLabel="Username Field View">
+                                                <rect key="frame" x="0.0" y="187" width="383" height="59"/>
+                                                <animations/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="59" id="w10-YG-YKC"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Snh-GI-1gC" userLabel="Password Field View">
+                                                <rect key="frame" x="0.0" y="270" width="383" height="59"/>
+                                                <animations/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="59" id="hs1-6l-oUi"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLn-EB-KGF">
+                                                <rect key="frame" x="172.5" y="400" width="37" height="38"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="38" id="dyX-xa-vZF"/>
+                                                </constraints>
+                                                <state key="normal" title="Done"/>
+                                                <connections>
+                                                    <action selector="donePressed:" destination="RJK-FY-QC7" eventType="touchUpInside" id="vKJ-C0-wu7"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <animations/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
+                                            <constraint firstItem="Snh-GI-1gC" firstAttribute="top" secondItem="gmL-de-SjP" secondAttribute="bottom" constant="24" id="5jT-O8-UbH"/>
+                                            <constraint firstAttribute="trailing" secondItem="gmL-de-SjP" secondAttribute="trailing" id="Dso-8E-uSq"/>
                                             <constraint firstItem="nTi-G4-6gO" firstAttribute="leading" secondItem="UUL-YL-1hm" secondAttribute="leading" constant="23" id="GJD-89-535"/>
+                                            <constraint firstAttribute="trailing" secondItem="Snh-GI-1gC" secondAttribute="trailing" id="Gz3-Fg-2F1"/>
+                                            <constraint firstItem="HLn-EB-KGF" firstAttribute="centerX" secondItem="UUL-YL-1hm" secondAttribute="centerX" id="KBb-sP-9gw"/>
+                                            <constraint firstItem="HLn-EB-KGF" firstAttribute="top" secondItem="Snh-GI-1gC" secondAttribute="bottom" constant="71" id="WNO-Q3-A41"/>
+                                            <constraint firstItem="Snh-GI-1gC" firstAttribute="leading" secondItem="UUL-YL-1hm" secondAttribute="leading" id="Y1K-i1-u0M"/>
+                                            <constraint firstItem="gmL-de-SjP" firstAttribute="leading" secondItem="UUL-YL-1hm" secondAttribute="leading" id="dpC-BW-zNm"/>
                                             <constraint firstItem="nTi-G4-6gO" firstAttribute="top" secondItem="UUL-YL-1hm" secondAttribute="top" constant="8" id="fKY-8m-dfD"/>
+                                            <constraint firstItem="gmL-de-SjP" firstAttribute="top" secondItem="nTi-G4-6gO" secondAttribute="bottom" constant="29" id="tNi-Ve-9P8"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -231,16 +266,19 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="profilePicImageView" destination="nTi-G4-6gO" id="wZ0-ab-YJ5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yuD-iR-HqE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1222.5" y="-1077.5"/>
+            <point key="canvasLocation" x="1072.5" y="-1371.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="LetMeGuess_whiteLogo.png" width="275" height="277"/>
-        <image name="Profile_Icon.png" width="30" height="30"/>
         <image name="gameBackgroundImage.jpg" width="375" height="682"/>
         <image name="noPicture.png" width="600" height="600"/>
+        <image name="profile_icon.png" width="32" height="32"/>
     </resources>
 </document>
