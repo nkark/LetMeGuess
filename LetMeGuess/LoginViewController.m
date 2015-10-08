@@ -79,7 +79,8 @@
                                                 [PFUser becomeInBackground:user.sessionToken];
                                                 [self hideAllAndShowSuccess:YES];
                                             } else {
-                                                if ([[error userInfo][@"error"] isEqualToString:@"invalid login parameters"]) {
+                                                NSString *errorMessage = [error userInfo][@"error"];
+                                                if ([errorMessage isEqualToString:@"invalid login parameters"]) {
                                                     [AlertUtil showAlertControllerWithMessage:@""
                                                                                         title:@"Invalid username and/or password. Please try again."
                                                                                        sender:self];

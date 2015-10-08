@@ -51,8 +51,16 @@
 }
 
 - (IBAction)signOutPressed:(id)sender {
-    [PFUser logOut];
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [PFUser logOutInBackgroundWithBlock:^(NSError *error) {
+        if (!error) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        } else {
+            NSString *errMessage = [error userInfo][@"error"];
+            [AlertUtil showAlertControllerWithMessage:@""
+                                                title:errMessage
+                                               sender:self];
+        }
+    }];
 }
 
 @end
