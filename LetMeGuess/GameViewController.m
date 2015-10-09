@@ -25,12 +25,12 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    
+    [self.inputTextField becomeFirstResponder];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    [self becomeFirstResponder];
     if (![PFUser currentUser]) {
         [self showLogin];
     }

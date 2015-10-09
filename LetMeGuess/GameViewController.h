@@ -10,4 +10,5 @@
 
 @interface GameViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *inputTextField;
 @end

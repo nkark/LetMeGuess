@@ -37,6 +37,7 @@
 		944B95451BC5E30700A0C7AF /* noPicture.png in Resources */ = {isa = PBXBuildFile; fileRef = 944B95441BC5E30700A0C7AF /* noPicture.png */; settings = {ASSET_TAGS = (); }; };
 		944B95481BC5E76800A0C7AF /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 944B95471BC5E76800A0C7AF /* AccountViewController.m */; settings = {ASSET_TAGS = (); }; };
 		945B4B771BC5EAFE00304A7A /* profile_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 945B4B761BC5EAFE00304A7A /* profile_icon.png */; settings = {ASSET_TAGS = (); }; };
+		946076481BC74B33009776A3 /* MZTimerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 946076471BC74B33009776A3 /* MZTimerLabel.m */; settings = {ASSET_TAGS = (); }; };
 		9496C8B21BC63FF200B6D692 /* userNameChangedSuccess.png in Resources */ = {isa = PBXBuildFile; fileRef = 9496C8B11BC63FF200B6D692 /* userNameChangedSuccess.png */; settings = {ASSET_TAGS = (); }; };
 		94C177311BC4792600E4FEB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C177301BC4792600E4FEB3 /* main.m */; };
 		94C177341BC4792600E4FEB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 94C177331BC4792600E4FEB3 /* AppDelegate.m */; };
@@ -83,6 +84,8 @@
 		944B95461BC5E76800A0C7AF /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		944B95471BC5E76800A0C7AF /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 		945B4B761BC5EAFE00304A7A /* profile_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_icon.png; sourceTree = "<group>"; };
+		946076461BC74B33009776A3 /* MZTimerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZTimerLabel.h; sourceTree = "<group>"; };
+		946076471BC74B33009776A3 /* MZTimerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZTimerLabel.m; sourceTree = "<group>"; };
 		9496C8B11BC63FF200B6D692 /* userNameChangedSuccess.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = userNameChangedSuccess.png; sourceTree = "<group>"; };
 		94C1772C1BC4792600E4FEB3 /* LetMeGuess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetMeGuess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94C177301BC4792600E4FEB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -198,6 +201,15 @@
 			name = Game;
 			sourceTree = "<group>";
 		};
+		946076451BC74B22009776A3 /* Game Timer */ = {
+			isa = PBXGroup;
+			children = (
+				946076461BC74B33009776A3 /* MZTimerLabel.h */,
+				946076471BC74B33009776A3 /* MZTimerLabel.m */,
+			);
+			name = "Game Timer";
+			sourceTree = "<group>";
+		};
 		94C177231BC4792600E4FEB3 = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +229,7 @@
 		94C1772E1BC4792600E4FEB3 /* LetMeGuess */ = {
 			isa = PBXGroup;
 			children = (
+				946076451BC74B22009776A3 /* Game Timer */,
 				94FC108B1BC5FBC000E69BD3 /* Floating Text Field */,
 				941B62301BC4E6D700CF9AF0 /* Utils */,
 				943ED50E1BC491FF0022F35A /* Main.storyboard */,
@@ -339,6 +352,7 @@
 				943ED5031BC491480022F35A /* GameViewController.m in Sources */,
 				94C177341BC4792600E4FEB3 /* AppDelegate.m in Sources */,
 				943ED5061BC491480022F35A /* UIImage+ImageEffects.m in Sources */,
+				946076481BC74B33009776A3 /* MZTimerLabel.m in Sources */,
 				941B62331BC4E6F200CF9AF0 /* AlertUtil.m in Sources */,
 				94C177311BC4792600E4FEB3 /* main.m in Sources */,
 				943ED5021BC491480022F35A /* AFBlurSegue.m in Sources */,
