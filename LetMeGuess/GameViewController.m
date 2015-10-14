@@ -25,17 +25,29 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.inputTextField becomeFirstResponder];
+    
+    if (!self.inputTextField.isFirstResponder) {
+        [self.inputTextField becomeFirstResponder];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
     [self becomeFirstResponder];
+    
     if (![PFUser currentUser]) {
         [self showLogin];
     }
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    if (self.inputTextField.isFirstResponder) {
+        [self.inputTextField becomeFirstResponder];
+    }
+}
 #pragma mark - Login
 
 - (void)showLogin {

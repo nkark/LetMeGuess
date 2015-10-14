@@ -21,10 +21,8 @@
 @property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *passwordTextField;
 
-@property (strong, nonatomic) NSString *username;
-@property (strong, nonatomic) NSString *password;
-
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *logoImageTopSpaceConstraint;
+
 @end
 
 @implementation LoginViewController
@@ -33,27 +31,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self registerKeyboard];
     
     [self setupLoginScreen];
-    
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
-                                   initWithTarget:self
-                                   action:@selector(dismissKeyboard)];
-    [self.view addGestureRecognizer:tap];
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    [self registerKeyboard];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [self deRegisterKeyboard];
 }
 
 - (void)setupLoginScreen {
-    [self.usernameTextField setPlaceholder:@"Username" floatingTitle:@"Username"];
-    [self.usernameTextField setFloatingLabelActiveTextColor:[UIColor brownColor]];
-    [self.passwordTextField setPlaceholder:@"Password" floatingTitle:@"Password"];
-    [self.passwordTextField setFloatingLabelActiveTextColor:[UIColor brownColor]];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
     
     self.loginButton.layer.cornerRadius = 10;
     self.loginButton.clipsToBounds = YES;
@@ -69,16 +67,15 @@
 
 - (IBAction)loginPressed:(id)sender {
     if ([self validateInput]) {
-        self.username = self.usernameTextField.text;
-        self.password = self.passwordTextField.text;
+        [self dismissKeyboard];
         
-        [PFUser logInWithUsernameInBackground:self.username
-                                     password:self.password
+        [PFUser logInWithUsernameInBackground:self.usernameTextField.text
+                                     password:self.passwordTextField.text
                                         block:^(PFUser *user, NSError *error) {
                                             if (user) {
                                                 [PFUser becomeInBackground:user.sessionToken];
                                                 [self hideAllAndShowSuccess:YES];
-                                            } else {
+                                            } else if (error) {
                                                 NSString *errorMessage = [error userInfo][@"error"];
                                                 if ([errorMessage isEqualToString:@"invalid login parameters"]) {
                                                     [AlertUtil showAlertControllerWithMessage:@""
@@ -92,17 +89,16 @@
 
 - (IBAction)signUpPressed:(id)sender {
     if ([self validateInput]) {
-        self.username = self.usernameTextField.text;
-        self.password = self.passwordTextField.text;
+        [self dismissKeyboard];
         
         PFUser *newUser = [PFUser user];
-        newUser.username = self.username;
-        newUser.password = self.password;
+        newUser.username = self.usernameTextField.text;
+        newUser.password = self.passwordTextField.text;
  
         [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (!error) {
+            if (succeeded) {
                 [self hideAllAndShowSuccess:NO];
-            } else {
+            } else if (error) {
                 NSString *errorString = [error userInfo][@"error"];
                 [AlertUtil showAlertControllerWithMessage:@"" title:errorString sender:self];
             }
@@ -214,25 +210,11 @@
 }
 
 - (void)keyboardWillShow {
-    self.logoImageTopSpaceConstraint.constant = -self.logoImageTopSpaceConstraint.constant;
-    [UIView animateWithDuration:0.25
-                          delay:0
-                        options:UIViewAnimationOptionTransitionCrossDissolve
-                     animations:^{
-                         [self.view layoutIfNeeded];
-                     }
-                     completion:nil];
+    [self adjustViewForKeyboard];
 }
 
 - (void)keyboardWillHide {
-    self.logoImageTopSpaceConstraint.constant = -self.logoImageTopSpaceConstraint.constant;
-    [UIView animateWithDuration:0.25
-                          delay:0
-                        options:UIViewAnimationOptionTransitionCrossDissolve
-                     animations:^{
-                         [self.view layoutIfNeeded];
-                     }
-                     completion:nil];
+    [self adjustViewForKeyboard];
 }
 
 - (void)registerKeyboard {
@@ -247,6 +229,25 @@
                                                object:nil];
 }
 
+- (void)deRegisterKeyboard {
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillShowNotification
+                                                  object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillHideNotification
+                                                  object:nil];
+}
+
+- (void)adjustViewForKeyboard {
+    self.logoImageTopSpaceConstraint.constant = -self.logoImageTopSpaceConstraint.constant;
+    [UIView animateWithDuration:0.25
+                          delay:0
+                        options:UIViewAnimationOptionTransitionCrossDissolve
+                     animations:^{
+                         [self.view layoutIfNeeded];
+                     }
+                     completion:nil];
+}
 
 #pragma mark - Text Field Delegate
 
@@ -261,6 +262,5 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-
 
 @end

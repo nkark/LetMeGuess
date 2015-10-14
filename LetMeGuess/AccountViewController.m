@@ -20,19 +20,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    if (![PFUser currentUser]) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [self setupAccountScreen];
+    }
+}
+
+#pragma mark - Utility
+
+- (void)setupAccountScreen {
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
     
-    if (![PFUser currentUser]) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    } else {
-        [self setupProfilePicView];
-    }
+    [self setupProfilePicView];
 }
-
-#pragma mark - Utility
 
 - (void)dismissKeyboard {
     [self.usernameTextField resignFirstResponder];
@@ -48,7 +52,6 @@
 }
 
 - (void)saveNewUsername:(NSString *)newUsername {
-    
     [[PFUser currentUser] setUsername:newUsername];
     [[PFUser currentUser] saveInBackgroundWithBlock:^(BOOL success, NSError *error) {
         if (success) {
@@ -58,20 +61,20 @@
             [UIView animateWithDuration:1 delay:0
                                 options:UIViewAnimationOptionTransitionCrossDissolve
                              animations:^{
-                self.changeUsernameSuccessView.alpha = 1;
-            } completion:^(BOOL finished) {
-                if (finished) {
-                    [self performSelector:@selector(dismissChangeUsernameSuccess)
-                               withObject:nil afterDelay:1];
-                    [self.usernameTextField setUserInteractionEnabled:NO];
-                    [self.usernameTextField resignFirstResponder];
-                }
-            }];
-        } else {
-            if (error) {
-                NSString *errMssg = [error userInfo][@"error"];
-                [AlertUtil showAlertControllerWithMessage:@"" title:errMssg sender:self];
-            }
+                                 self.changeUsernameSuccessView.hidden = NO;
+                                 self.changeUsernameSuccessView.alpha = 1;
+                             }
+                             completion:^(BOOL finished) {
+                                if (finished) {
+                                    [self performSelector:@selector(dismissChangeUsernameSuccess)
+                                               withObject:nil afterDelay:1];
+                                    [self.usernameTextField setUserInteractionEnabled:NO];
+                                    [self.usernameTextField resignFirstResponder];
+                                }
+                             }];
+        } else if (error) {
+            NSString *errMssg = [error userInfo][@"error"];
+            [AlertUtil showAlertControllerWithMessage:@"" title:errMssg sender:self];
         }
     }];
 }
@@ -81,7 +84,9 @@
                         options:UIViewAnimationOptionTransitionCrossDissolve
                      animations:^{
                          self.changeUsernameSuccessView.alpha = 0;
-                     } completion:nil];
+                         self.changeUsernameSuccessView.hidden = YES;
+                     }
+                     completion:nil];
 }
 
 /*
