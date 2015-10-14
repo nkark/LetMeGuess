@@ -12,5 +12,4 @@
 #define ALERT_TITLE_COLOR [UIColor redColor]
 #define ALERT_MESSAGE_COLOR [UIColor blackColor]
 
-
 #endif /* Constants_h */

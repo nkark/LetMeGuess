@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "AlertUtil.h"
 #import "AccountViewController.h"
+#import "NumbersService.h"
 
 @interface GameViewController ()
 
@@ -48,6 +49,7 @@
         [self.inputTextField becomeFirstResponder];
     }
 }
+
 #pragma mark - Login
 
 - (void)showLogin {
@@ -60,5 +62,18 @@
     UIViewController *destination = segue.destinationViewController;
     destination.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
 }
+
+#pragma mark - Action Methods
+
+- (IBAction)generateFactPressed:(id)sender {
+    [NumbersService getFact:[NSNumber numberWithInt:43]
+                    success:^(NSString *fact) {
+                        NSLog(@"fact: %@", fact);
+                    }
+                    failure:^(NSError *error) {
+                        NSLog(@"error: %@", error.localizedDescription);
+                    }];
+}
+
 
 @end
