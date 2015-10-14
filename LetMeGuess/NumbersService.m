@@ -30,10 +30,16 @@
 }
 
 + (NSString *)parseFact:(NSString *)fact {
+    NSString *prefix = @"is the";
+    NSString *suffix = @".";
+    NSRange subStringRange = NSMakeRange(prefix.length, fact.length - prefix.length - suffix.length);
     
-    
-    
-    return @"";
+    NSString *parsedFact = [fact substringWithRange:subStringRange];
+    parsedFact = [parsedFact stringByAppendingString:@"."];
+    NSString *firstCapChar = [[parsedFact substringToIndex:1] capitalizedString];
+    parsedFact = [parsedFact stringByReplacingCharactersInRange:NSMakeRange(0,1) withString:firstCapChar];
+
+    return parsedFact;
 }
 
 @end
