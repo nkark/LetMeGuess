@@ -183,12 +183,30 @@
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hLG-be-cEH" userLabel="Timer View">
                                                 <rect key="frame" x="20" y="34" width="94" height="54"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="csW-NE-6iL" userLabel="Timer Label" customClass="MZTimerLabel">
+                                                        <rect key="frame" x="8" y="8" width="78" height="38"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="csW-NE-6iL" firstAttribute="top" secondItem="hLG-be-cEH" secondAttribute="top" constant="8" id="65t-Mo-3Ib"/>
+                                                    <constraint firstItem="csW-NE-6iL" firstAttribute="centerY" secondItem="hLG-be-cEH" secondAttribute="centerY" id="BBs-Ro-KOG"/>
+                                                    <constraint firstAttribute="trailing" secondItem="csW-NE-6iL" secondAttribute="trailing" constant="8" id="IUl-eZ-5xH"/>
+                                                    <constraint firstItem="csW-NE-6iL" firstAttribute="centerX" secondItem="hLG-be-cEH" secondAttribute="centerX" id="UKZ-ZC-nAm"/>
+                                                    <constraint firstItem="csW-NE-6iL" firstAttribute="leading" secondItem="hLG-be-cEH" secondAttribute="leading" constant="8" id="Vew-th-N4X"/>
+                                                    <constraint firstAttribute="bottom" secondItem="csW-NE-6iL" secondAttribute="bottom" constant="8" id="sGd-3v-YvD"/>
+                                                </constraints>
                                             </view>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQ9-K5-bSy" userLabel="Start Stop Button" customClass="DKCircleButton">
                                                 <rect key="frame" x="154" y="23" width="75" height="75"/>
                                                 <animations/>
+                                                <color key="backgroundColor" red="0.034736786909999998" green="0.64557990769999996" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="75" id="T2j-5X-sHn"/>
                                                     <constraint firstAttribute="width" constant="75" id="k3j-M9-YAR"/>
@@ -197,23 +215,11 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emB-i4-xWy" userLabel="Next Hint Button">
-                                                <rect key="frame" x="269" y="34" width="94" height="54"/>
-                                                <animations/>
-                                                <color key="backgroundColor" red="0.56931089739999996" green="0.35011687429999999" blue="0.16740562319999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                                <state key="normal" title="New Hint">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="generateFactPressed:" destination="y5D-R2-Ol3" eventType="touchUpInside" id="VNe-qw-gqF"/>
-                                                </connections>
-                                            </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ml3-TN-Gdq" userLabel="Hint View">
                                                 <rect key="frame" x="10" y="120" width="363" height="190"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="The game instructions will be displayed here by default when no game is in play." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="c8S-at-hS2">
-                                                        <rect key="frame" x="8" y="50" width="347" height="132"/>
+                                                        <rect key="frame" x="8" y="8" width="347" height="174"/>
                                                         <animations/>
                                                         <color key="textColor" red="0.37077323717948718" green="0.2480269987969615" blue="0.12820465231539915" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
@@ -225,7 +231,7 @@
                                                 <constraints>
                                                     <constraint firstItem="c8S-at-hS2" firstAttribute="centerX" secondItem="Ml3-TN-Gdq" secondAttribute="centerX" id="0ia-IS-KUB"/>
                                                     <constraint firstItem="c8S-at-hS2" firstAttribute="leading" secondItem="Ml3-TN-Gdq" secondAttribute="leading" constant="8" id="45c-ak-S7u"/>
-                                                    <constraint firstItem="c8S-at-hS2" firstAttribute="top" secondItem="Ml3-TN-Gdq" secondAttribute="top" constant="50" id="JQk-bp-rnB"/>
+                                                    <constraint firstItem="c8S-at-hS2" firstAttribute="top" secondItem="Ml3-TN-Gdq" secondAttribute="top" constant="8" id="JQk-bp-rnB"/>
                                                     <constraint firstAttribute="bottom" secondItem="c8S-at-hS2" secondAttribute="bottom" constant="8" id="cEt-eZ-OUf"/>
                                                     <constraint firstAttribute="trailing" secondItem="c8S-at-hS2" secondAttribute="trailing" constant="8" id="gyz-cs-F7S"/>
                                                 </constraints>
@@ -239,6 +245,18 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
                                             </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emB-i4-xWy" userLabel="Next Hint Button">
+                                                <rect key="frame" x="269" y="34" width="94" height="54"/>
+                                                <animations/>
+                                                <color key="backgroundColor" red="0.56931089739999996" green="0.35011687429999999" blue="0.16740562319999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                <state key="normal" title="Hint">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="generateFactPressed:" destination="y5D-R2-Ol3" eventType="touchUpInside" id="VNe-qw-gqF"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -321,6 +339,8 @@
                         <outlet property="inputTextField" destination="7Gh-NT-gbQ" id="boB-UD-x2X"/>
                         <outlet property="nextHintButton" destination="emB-i4-xWy" id="5HI-cy-HGD"/>
                         <outlet property="startStopButton" destination="IQ9-K5-bSy" id="Kv9-dZ-hQI"/>
+                        <outlet property="timerLabel" destination="csW-NE-6iL" id="mQU-so-swI"/>
+                        <outlet property="timerView" destination="hLG-be-cEH" id="jQ2-hz-be8"/>
                         <segue destination="pch-SN-IBp" kind="showDetail" identifier="loginSegue" id="aWW-P4-QWg"/>
                     </connections>
                 </viewController>

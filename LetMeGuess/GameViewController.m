@@ -37,13 +37,13 @@ int newFactAttempts;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+
     if (!self.inputTextField.isFirstResponder) {
         [self.inputTextField becomeFirstResponder];
     }
     
     //self.currentNumber = arc4random_uniform(51);
-    self.currentNumber = 13;
+    self.currentNumber = 3;
     NSLog(@"currentNumber: %d", self.currentNumber);
 }
 
@@ -55,6 +55,8 @@ int newFactAttempts;
     if (![PFUser currentUser]) {
         [self showLogin];
     }
+    
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -102,26 +104,40 @@ int newFactAttempts;
 
 - (void)setupGameScreen {
     self.nextHintButton.layer.cornerRadius = 10;
-    self.nextHintButton.clipsToBounds = YES;
     self.hintView.layer.cornerRadius = 10;
-    self.hintView.clipsToBounds = YES;
+    self.timerView.layer.cornerRadius = 10;
+    [self.timerLabel setCountDownTime:120];
+    self.timerLabel.textColor = [UIColor brownColor];
+    self.timerLabel.timeFormat = @"mm:ss";
+    [self.timerLabel setTimerType:MZTimerLabelTypeTimer];
     
     self.startButton = [[DKCircleButton alloc] initWithFrame:CGRectMake(0, 0, 75, 75)];
-    self.startButton.center = self.startStopButton.center;
+    self.startButton.center = CGPointMake(self.view.center.x, self.startStopButton.center.y);
     [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
     [self.startButton setBackgroundColor:[UIColor colorWithRed:0 green:0.5 blue:0 alpha:1]];
     [self.startButton addTarget:self action:@selector(startStopPressed) forControlEvents:UIControlEventTouchUpInside];
     [self.contentView addSubview:self.startButton];
+    
 }
 
 - (void)startStopPressed {
     if ([self.startButton.titleLabel.text isEqualToString:@"Start"]) {
-         [self.startButton setTitle:@"Stop" forState:UIControlStateNormal];
-         [self.startButton setBackgroundColor:[UIColor redColor]];
+        [self.timerLabel startWithEndingBlock:^(NSTimeInterval countTime){
+            [self handleTimerExpired];
+        }];
+        [self.startButton setTitle:@"Stop" forState:UIControlStateNormal];
+        [self.startButton setBackgroundColor:[UIColor redColor]];
     } else {
+        [self.timerLabel reset];
+        [self.timerLabel pause];
+        [self.timerLabel setCountDownTime:120];
         [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
         [self.startButton setBackgroundColor:[UIColor colorWithRed:0 green:0.5 blue:0 alpha:1]];
     }
+}
+
+- (void)handleTimerExpired {
+    NSLog(@"timer expired!");
 }
 
 #pragma mark - Login

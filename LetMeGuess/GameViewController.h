@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MZTimerLabel.h"
 
 @interface GameViewController : UIViewController
 
@@ -16,5 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *hintTextView;
 @property (weak, nonatomic) IBOutlet UIButton *startStopButton;
 @property (weak, nonatomic) IBOutlet UIButton *nextHintButton;
+@property (weak, nonatomic) IBOutlet MZTimerLabel *timerLabel;
+@property (weak, nonatomic) IBOutlet UIView *timerView;
 
 @end
