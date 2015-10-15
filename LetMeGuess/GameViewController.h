@@ -10,7 +10,11 @@
 
 @interface GameViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIView *contentView;
 @property (weak, nonatomic) IBOutlet UITextField *inputTextField;
+@property (weak, nonatomic) IBOutlet UIView *hintView;
 @property (weak, nonatomic) IBOutlet UITextView *hintTextView;
+@property (weak, nonatomic) IBOutlet UIButton *startStopButton;
+@property (weak, nonatomic) IBOutlet UIButton *nextHintButton;
 
 @end

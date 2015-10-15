@@ -11,6 +11,7 @@
 @interface NumbersService : NSObject
 
 + (void)getFact:(NSNumber *)number
+    currentFact:(NSString *)currentFact
         success: (void(^)(NSString *fact))success
         failure: (void(^)(NSError* error))failure;
 

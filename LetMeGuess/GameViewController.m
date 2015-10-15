@@ -11,19 +11,28 @@
 #import "AlertUtil.h"
 #import "AccountViewController.h"
 #import "NumbersService.h"
+#include <stdlib.h>
+#import "DKCircleButton.h"
 
 @interface GameViewController ()
 
 @property (strong, nonatomic) NSString *currentFact;
+@property int currentNumber;
 @property (strong, nonatomic) UIActivityIndicatorView *spinner;
+@property (strong, nonatomic) DKCircleButton *startButton;
+
 @end
 
 @implementation GameViewController
+
+int newFactAttempts;
 
 #pragma mark - View Controller Life Cycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setupGameScreen];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -32,6 +41,10 @@
     if (!self.inputTextField.isFirstResponder) {
         [self.inputTextField becomeFirstResponder];
     }
+    
+    //self.currentNumber = arc4random_uniform(51);
+    self.currentNumber = 13;
+    NSLog(@"currentNumber: %d", self.currentNumber);
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -73,6 +86,44 @@
     });
 }
 
+- (void)showSpinner {
+    self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    self.spinner.frame = CGRectMake(0, 0, 24, 24);
+    self.spinner.center = self.view.center;
+    [self.view addSubview:self.spinner];
+    [self.spinner startAnimating];
+}
+
+- (void)hideSpinner {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.spinner stopAnimating];
+    });
+}
+
+- (void)setupGameScreen {
+    self.nextHintButton.layer.cornerRadius = 10;
+    self.nextHintButton.clipsToBounds = YES;
+    self.hintView.layer.cornerRadius = 10;
+    self.hintView.clipsToBounds = YES;
+    
+    self.startButton = [[DKCircleButton alloc] initWithFrame:CGRectMake(0, 0, 75, 75)];
+    self.startButton.center = self.startStopButton.center;
+    [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
+    [self.startButton setBackgroundColor:[UIColor colorWithRed:0 green:0.5 blue:0 alpha:1]];
+    [self.startButton addTarget:self action:@selector(startStopPressed) forControlEvents:UIControlEventTouchUpInside];
+    [self.contentView addSubview:self.startButton];
+}
+
+- (void)startStopPressed {
+    if ([self.startButton.titleLabel.text isEqualToString:@"Start"]) {
+         [self.startButton setTitle:@"Stop" forState:UIControlStateNormal];
+         [self.startButton setBackgroundColor:[UIColor redColor]];
+    } else {
+        [self.startButton setTitle:@"Start" forState:UIControlStateNormal];
+        [self.startButton setBackgroundColor:[UIColor colorWithRed:0 green:0.5 blue:0 alpha:1]];
+    }
+}
+
 #pragma mark - Login
 
 - (void)showLogin {
@@ -89,32 +140,33 @@
 #pragma mark - Action Methods
 
 - (IBAction)generateFactPressed:(id)sender {
-    
-    self.spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    self.spinner.frame = CGRectMake(0, 0, 24, 24);
-    self.spinner.center = self.view.center;
-    [self.view addSubview:self.spinner];
-    [self.spinner startAnimating];
-    
-    [self getFact:[NSNumber numberWithInt:2]];
+    [self showSpinner];
+    newFactAttempts = 1;
+    [self getFact:self.currentNumber];
 }
 
 #pragma mark - Number Service
 
-- (void)getFact:(NSNumber *)number {
+- (void)getFact:(int)number {
     NSURLSession *session = [NSURLSession sharedSession];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://numbersapi.com/%d", number.intValue]];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://numbersapi.com/%d", number]];
 
     NSURLSessionDataTask * dataTask = [session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (!error) {
-            NSString *newFact;
             if (self.currentFact.length == 0) {
                 self.currentFact = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
                 [self parseFact:self.currentFact];
             } else {
-                newFact = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                NSString *newFact = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
                 if ([self.currentFact isEqualToString:newFact]) {
-                    [self getFact:number];
+                    NSLog(@"Same fact   attempts: %d", newFactAttempts);
+                    if (newFactAttempts > 2) {
+                        [self hideSpinner];
+                        return;
+                    } else {
+                        [self getFact:number];
+                        newFactAttempts++;
+                    }
                 } else {
                     [self parseFact:newFact];
                 }
@@ -122,30 +174,26 @@
         } else {
             NSLog(@"ERROR: %@", error.localizedDescription);
         }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.spinner stopAnimating];
-        });
+        
     }];
     
     [dataTask resume];
 }
 
 - (void)parseFact:(NSString *)fact {
-    NSString *prefix = @"is the";
+    NSString *prefix = @"is th";
     NSString *suffix = @".";
-    NSRange subStringRange = NSMakeRange(prefix.length-1, fact.length - prefix.length - suffix.length);
+    NSRange subStringRange = NSMakeRange(prefix.length, fact.length - prefix.length - suffix.length);
     
     NSString *parsedFact = [fact substringWithRange:subStringRange];
-    parsedFact = [parsedFact stringByAppendingString:@"."];
-    NSString *firstCapChar = [[parsedFact substringToIndex:1] capitalizedString];
-    parsedFact = [parsedFact stringByReplacingCharactersInRange:NSMakeRange(0,1) withString:firstCapChar];
-
+    
     dispatch_async(dispatch_get_main_queue(), ^{
         [self showFact:parsedFact];
     });
 }
 
 - (void)showFact:(NSString *)fact {
+    [self hideSpinner];
     [UIView animateWithDuration:.25 delay:0
                         options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
                             self.hintTextView.alpha = 0;

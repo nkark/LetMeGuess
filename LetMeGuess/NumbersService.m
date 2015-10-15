@@ -10,10 +10,13 @@
 
 @implementation NumbersService
 
-+ (void)getFact:(NSNumber *)number
++ (void)getFact:(int)number
+    currentFact:(NSString *)currentFact
        success: (void(^)(NSString *fact))success
        failure: (void(^)(NSError* error))failure {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://numbersapi.com/%d", number.intValue]];
+    
+    /*
+     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://numbersapi.com/%d", number.intValue]];
     NSLog(@"URL: %@\n\n", url);
     NSURLSession * session = [NSURLSession sharedSession];
     
@@ -27,6 +30,33 @@
     }];
     
     [dataTask resume];
+     */
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://numbersapi.com/%d", number]];
+    
+    NSURLSessionDataTask * dataTask = [session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (!error) {
+            NSString *newFact;
+            if (currentFact.length == 0) {
+                currentFact = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                [self parseFact:currentFact];
+            } else {
+                newFact = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                NSLog(@"\nnewFact :  %@\n\n currFact:  %@", newFact, currentFact);
+                if ([currentFact isEqualToString:newFact]) {
+                    [self getFact:number];
+                } else {
+                    [self parseFact:newFact];
+                }
+            }
+        } else {
+            NSLog(@"ERROR: %@", error.localizedDescription);
+        }
+        
+    }];
+    
+    [dataTask resume];
+    
 }
 
 + (NSString *)parseFact:(NSString *)fact {

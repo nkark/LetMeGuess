@@ -35,7 +35,7 @@
                                     <constraint firstAttribute="width" constant="213" id="k3e-ly-X2m"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HpC-16-X5f" customClass="JVFloatLabeledTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HpC-16-X5f" customClass="JVFloatLabeledTextField">
                                 <rect key="frame" x="53" y="272" width="269" height="42"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -58,7 +58,7 @@
                                     <outlet property="delegate" destination="pch-SN-IBp" id="uXu-EQ-UGm"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41k-AI-84A">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41k-AI-84A">
                                 <rect key="frame" x="139" y="429" width="97" height="53"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -70,7 +70,7 @@
                                     <action selector="loginPressed:" destination="pch-SN-IBp" eventType="touchUpInside" id="dnx-7U-FbW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hw-ky-Phc">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hw-ky-Phc">
                                 <rect key="frame" x="127" y="511" width="121" height="53"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -82,7 +82,7 @@
                                     <action selector="signUpPressed:" destination="pch-SN-IBp" eventType="touchUpInside" id="wCM-NG-RSv"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fPs-Ej-UvF" customClass="JVFloatLabeledTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="fPs-Ej-UvF" customClass="JVFloatLabeledTextField">
                                 <rect key="frame" x="53" y="350" width="269" height="42"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -182,10 +182,33 @@
                                                 <animations/>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hLG-be-cEH" userLabel="Timer View">
-                                                <rect key="frame" x="10" y="34" width="104" height="54"/>
+                                                <rect key="frame" x="20" y="34" width="94" height="54"/>
                                                 <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQ9-K5-bSy" userLabel="Start Stop Button" customClass="DKCircleButton">
+                                                <rect key="frame" x="154" y="23" width="75" height="75"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="75" id="T2j-5X-sHn"/>
+                                                    <constraint firstAttribute="width" constant="75" id="k3j-M9-YAR"/>
+                                                </constraints>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emB-i4-xWy" userLabel="Next Hint Button">
+                                                <rect key="frame" x="269" y="34" width="94" height="54"/>
+                                                <animations/>
+                                                <color key="backgroundColor" red="0.56931089739999996" green="0.35011687429999999" blue="0.16740562319999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                <state key="normal" title="New Hint">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="generateFactPressed:" destination="y5D-R2-Ol3" eventType="touchUpInside" id="VNe-qw-gqF"/>
+                                                </connections>
+                                            </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ml3-TN-Gdq" userLabel="Hint View">
                                                 <rect key="frame" x="10" y="120" width="363" height="190"/>
                                                 <subviews>
@@ -207,27 +230,6 @@
                                                     <constraint firstAttribute="trailing" secondItem="c8S-at-hS2" secondAttribute="trailing" constant="8" id="gyz-cs-F7S"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQ9-K5-bSy" userLabel="Start Stop Button">
-                                                <rect key="frame" x="154" y="23" width="75" height="75"/>
-                                                <animations/>
-                                                <color key="backgroundColor" red="0.92463395979999996" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="75" id="T2j-5X-sHn"/>
-                                                    <constraint firstAttribute="width" constant="75" id="k3j-M9-YAR"/>
-                                                </constraints>
-                                                <state key="normal" title="Button">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emB-i4-xWy" userLabel="Next Hint Button">
-                                                <rect key="frame" x="279" y="34" width="94" height="54"/>
-                                                <animations/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <state key="normal" title="Next Hint"/>
-                                                <connections>
-                                                    <action selector="generateFactPressed:" destination="y5D-R2-Ol3" eventType="touchUpInside" id="VNe-qw-gqF"/>
-                                                </connections>
-                                            </button>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Gh-NT-gbQ">
                                                 <rect key="frame" x="162" y="332" width="59" height="30"/>
                                                 <animations/>
@@ -246,23 +248,26 @@
                                             <constraint firstItem="7Gh-NT-gbQ" firstAttribute="centerX" secondItem="DTH-x2-Cdl" secondAttribute="centerX" id="5Jw-xQ-gzh"/>
                                             <constraint firstItem="7Gh-NT-gbQ" firstAttribute="top" secondItem="Ml3-TN-Gdq" secondAttribute="bottom" constant="22" id="61V-vl-pLQ"/>
                                             <constraint firstItem="Ml3-TN-Gdq" firstAttribute="leading" secondItem="DTH-x2-Cdl" secondAttribute="leading" constant="10" id="6hn-Ma-tVe"/>
+                                            <constraint firstItem="Ml3-TN-Gdq" firstAttribute="top" secondItem="emB-i4-xWy" secondAttribute="bottom" constant="32" id="83d-90-tyg"/>
                                             <constraint firstItem="hLG-be-cEH" firstAttribute="top" secondItem="DTH-x2-Cdl" secondAttribute="top" constant="34" id="9qs-li-87J"/>
                                             <constraint firstItem="IQ9-K5-bSy" firstAttribute="centerX" secondItem="DTH-x2-Cdl" secondAttribute="centerX" id="A9S-92-SJA"/>
                                             <constraint firstItem="Ml3-TN-Gdq" firstAttribute="top" secondItem="hLG-be-cEH" secondAttribute="bottom" constant="32" id="GPO-v4-p96"/>
+                                            <constraint firstItem="Ml3-TN-Gdq" firstAttribute="leading" secondItem="DTH-x2-Cdl" secondAttribute="leading" constant="10" id="Glr-pl-egL"/>
                                             <constraint firstItem="hLG-be-cEH" firstAttribute="centerY" secondItem="IQ9-K5-bSy" secondAttribute="centerY" id="Hup-ct-ueV"/>
                                             <constraint firstItem="zS1-Hd-zkg" firstAttribute="centerX" secondItem="DTH-x2-Cdl" secondAttribute="centerX" id="Mbd-kT-spm"/>
-                                            <constraint firstItem="emB-i4-xWy" firstAttribute="leading" secondItem="IQ9-K5-bSy" secondAttribute="trailing" constant="50" id="Mcz-Y1-Gsa"/>
+                                            <constraint firstItem="emB-i4-xWy" firstAttribute="leading" secondItem="IQ9-K5-bSy" secondAttribute="trailing" constant="40" id="Mcz-Y1-Gsa"/>
                                             <constraint firstAttribute="bottom" secondItem="zS1-Hd-zkg" secondAttribute="bottom" id="SEa-Um-u0p"/>
                                             <constraint firstItem="Ml3-TN-Gdq" firstAttribute="leading" secondItem="hLG-be-cEH" secondAttribute="leading" id="TS9-05-eYT"/>
                                             <constraint firstItem="IQ9-K5-bSy" firstAttribute="centerY" secondItem="emB-i4-xWy" secondAttribute="centerY" id="UYX-9B-QXe"/>
                                             <constraint firstAttribute="trailing" secondItem="Ml3-TN-Gdq" secondAttribute="trailing" constant="10" id="YNO-bR-SWu"/>
-                                            <constraint firstItem="hLG-be-cEH" firstAttribute="leading" secondItem="DTH-x2-Cdl" secondAttribute="leading" constant="10" id="dpK-5g-sdg"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ml3-TN-Gdq" secondAttribute="trailing" constant="10" id="bdW-h8-Jvb"/>
+                                            <constraint firstItem="hLG-be-cEH" firstAttribute="leading" secondItem="DTH-x2-Cdl" secondAttribute="leading" constant="20" id="dpK-5g-sdg"/>
                                             <constraint firstItem="Ml3-TN-Gdq" firstAttribute="top" secondItem="emB-i4-xWy" secondAttribute="bottom" constant="32" id="e22-Ld-cZl"/>
                                             <constraint firstItem="zS1-Hd-zkg" firstAttribute="leading" secondItem="DTH-x2-Cdl" secondAttribute="leading" id="e6X-cZ-v54"/>
                                             <constraint firstItem="Ml3-TN-Gdq" firstAttribute="trailing" secondItem="emB-i4-xWy" secondAttribute="trailing" id="fJ6-eQ-pMC"/>
                                             <constraint firstAttribute="bottom" secondItem="7Gh-NT-gbQ" secondAttribute="bottom" constant="240" id="hHH-EN-EXK"/>
                                             <constraint firstItem="IQ9-K5-bSy" firstAttribute="leading" secondItem="hLG-be-cEH" secondAttribute="trailing" constant="40" id="iJc-DW-QhT"/>
-                                            <constraint firstAttribute="trailing" secondItem="emB-i4-xWy" secondAttribute="trailing" constant="10" id="oPI-nn-Bjt"/>
+                                            <constraint firstAttribute="trailing" secondItem="emB-i4-xWy" secondAttribute="trailing" constant="20" id="oPI-nn-Bjt"/>
                                             <constraint firstItem="zS1-Hd-zkg" firstAttribute="top" secondItem="DTH-x2-Cdl" secondAttribute="top" id="pzC-Rc-iVI"/>
                                             <constraint firstItem="Ml3-TN-Gdq" firstAttribute="top" secondItem="IQ9-K5-bSy" secondAttribute="bottom" constant="22" id="wOa-We-Odx"/>
                                             <constraint firstItem="IQ9-K5-bSy" firstAttribute="top" secondItem="DTH-x2-Cdl" secondAttribute="top" constant="23" id="wTc-f5-sdL"/>
@@ -271,9 +276,12 @@
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="6hn-Ma-tVe"/>
+                                                <exclude reference="83d-90-tyg"/>
                                                 <exclude reference="GPO-v4-p96"/>
+                                                <exclude reference="TS9-05-eYT"/>
                                                 <exclude reference="YNO-bR-SWu"/>
                                                 <exclude reference="e22-Ld-cZl"/>
+                                                <exclude reference="fJ6-eQ-pMC"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -307,8 +315,12 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="contentView" destination="DTH-x2-Cdl" id="m3q-Zm-2JS"/>
                         <outlet property="hintTextView" destination="c8S-at-hS2" id="L0O-97-gCF"/>
+                        <outlet property="hintView" destination="Ml3-TN-Gdq" id="hIR-6W-XHW"/>
                         <outlet property="inputTextField" destination="7Gh-NT-gbQ" id="boB-UD-x2X"/>
+                        <outlet property="nextHintButton" destination="emB-i4-xWy" id="5HI-cy-HGD"/>
+                        <outlet property="startStopButton" destination="IQ9-K5-bSy" id="Kv9-dZ-hQI"/>
                         <segue destination="pch-SN-IBp" kind="showDetail" identifier="loginSegue" id="aWW-P4-QWg"/>
                     </connections>
                 </viewController>
@@ -476,7 +488,7 @@
                                                     </mask>
                                                 </variation>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIK-zX-QWW">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIK-zX-QWW">
                                                 <rect key="frame" x="241" y="57" width="97" height="52"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="Abel-Regular" family="Abel" pointSize="30"/>
@@ -487,7 +499,7 @@
                                                     <action selector="signOutPressed:" destination="RJK-FY-QC7" eventType="touchUpInside" id="Dbh-VS-72q"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLn-EB-KGF">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLn-EB-KGF">
                                                 <rect key="frame" x="162" y="324" width="58" height="51"/>
                                                 <animations/>
                                                 <constraints>
