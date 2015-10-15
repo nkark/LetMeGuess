@@ -471,7 +471,7 @@
 				);
 				INFOPLIST_FILE = LetMeGuess/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = appPond.LetMeGuess;
+				PRODUCT_BUNDLE_IDENTIFIER = appTimus.LetMeGuess;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -489,7 +489,7 @@
 				);
 				INFOPLIST_FILE = LetMeGuess/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = appPond.LetMeGuess;
+				PRODUCT_BUNDLE_IDENTIFIER = appTimus.LetMeGuess;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
