@@ -8,7 +8,8 @@
 
 #import "AccountViewController.h"
 #import "RKDropdownAlert.h"
-#import "Constants.h"
+#import "MyConstants.h"
+#import "CameraSessionView.h"
 
 @interface AccountViewController ()
 
@@ -28,6 +29,10 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
 #pragma mark - Utility
 
 - (void)setupAccountScreen {
@@ -37,6 +42,7 @@
     [self.view addGestureRecognizer:tap];
     
     [self setupProfilePicView];
+    self.usernameTextField.text = [PFUser currentUser].username;
 }
 
 - (void)dismissKeyboard {
@@ -44,12 +50,15 @@
 }
 
 - (void)setupProfilePicView {
+    UITapGestureRecognizer *pictureTap = [[UITapGestureRecognizer alloc]
+                                          initWithTarget:self
+                                          action:@selector(profilePictureTapped)];
+    [self.profilePicImageView addGestureRecognizer:pictureTap];
+    
     self.profilePicImageView.layer.cornerRadius = 50;
     self.profilePicImageView.layer.masksToBounds = YES;
     self.profilePicImageView.layer.borderWidth = 1.75;
     self.profilePicImageView.layer.borderColor = [[UIColor grayColor] CGColor];
-    
-    self.usernameTextField.text = [PFUser currentUser].username;
 }
 
 - (void)saveNewUsername:(NSString *)newUsername {
@@ -90,15 +99,86 @@
                      completion:nil];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)profilePictureTapped {
+    [self showCamera];
 }
-*/
+
+- (void)showCamera {
+    CGRect frame = self.view.frame;
+    frame.origin.y = [UIApplication sharedApplication].statusBarFrame.size.height;
+    self.cameraView = [[CameraSessionView alloc] initWithFrame:frame];
+    self.cameraView.delegate = self;
+    [self.cameraView setTopBarColor:[UIColor brownColor]];
+    self.cameraView.alpha = 0;
+    [self.view addSubview:self.cameraView];
+    
+    [UIView animateWithDuration:.35 delay:0
+                        options:UIViewAnimationOptionTransitionCrossDissolve
+                     animations:^{
+                         self.cameraView.alpha = 1;
+                     }
+                     completion:nil];
+}
+
+#pragma mark - Camera Delegate
+
+-(void)didCaptureImage:(UIImage *)image {
+    UIImageView *imagePreview = [[UIImageView alloc] initWithImage:image];
+    imagePreview.frame = CGRectMake(0, 0, self.view.frame.size.width - 50, self.view.frame.size.height/2.2);
+    imagePreview.center = self.view.center;
+    CGRect frame = imagePreview.frame;
+    frame.origin.y -= 50;
+    imagePreview.frame = frame;
+    imagePreview.contentMode = UIViewContentModeScaleAspectFill;
+    imagePreview.alpha = 0;
+    [self.cameraView addSubview:imagePreview];
+    
+    [UIView animateWithDuration:.4 delay:0
+                        options:UIViewAnimationOptionTransitionCrossDissolve
+                     animations:^{
+                         imagePreview.alpha = 1;
+                     }
+                     completion:nil];
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"Update Profile Picture" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        self.profilePicImageView.image = image;
+        [UIView animateWithDuration:.1 delay:0
+                            options:UIViewAnimationOptionTransitionCrossDissolve
+                         animations:^{
+                             imagePreview.alpha = 0;
+                         }
+                         completion:^(BOOL finished) {
+                             if (finished) {
+                                 [imagePreview removeFromSuperview];
+                                 [self.cameraView onTapDismissButton];
+                             }
+                         }];
+    }];
+    [alert addAction:yesAction];
+    
+    UIAlertAction *noAction = [UIAlertAction actionWithTitle:@"Take Another" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [UIView animateWithDuration:.1 delay:0
+                            options:UIViewAnimationOptionTransitionCrossDissolve
+                         animations:^{
+                             imagePreview.alpha = 0;
+                         }
+                         completion:^(BOOL finished) {
+                             if (finished) {
+                                 [imagePreview removeFromSuperview];
+                             }
+                         }];
+        [alert dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alert addAction:noAction];
+
+    
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+#pragma mark - Actions
+
 - (IBAction)editUsernamePressed:(id)sender {
     [self.usernameTextField resignFirstResponder];
     

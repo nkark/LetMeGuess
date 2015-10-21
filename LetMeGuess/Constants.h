@@ -1,15 +1,39 @@
 //
 //  Constants.h
-//  LetMeGuess
+//  CameraWithAVFoundation
 //
-//  Created by Nitin Karki on 10/6/15.
-//  Copyright © 2015 appPond. All rights reserved.
+//  Created by Christopher Cohen on 1/24/15.
+//  Copyright (c) 2015 Gabriel Alvarado. All rights reserved.
 //
 
-#ifndef Constants_h
-#define Constants_h
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-#define ALERT_ERROR_COLOR [UIColor colorWithRed:0.5 green:0 blue:0 alpha:1]
-#define ALERT_SUCCESS_COLOR [UIColor colorWithRed:0 green:0.5 blue:0 alpha:1]
+@interface Constants : NSObject
 
-#endif /* Constants_h */
+///Type Definitions
+
+typedef NS_ENUM(BOOL, CameraType) {
+    FrontFacingCamera,
+    RearFacingCamera,
+};
+
+typedef NS_ENUM(NSInteger, BarButtonTag) {
+    ShutterButtonTag,
+    ToggleButtonTag,
+    FlashButtonTag,
+    DismissButtonTag,
+};
+
+typedef struct {
+    CGFloat ISO;
+    CGFloat exposureDuration;
+    CGFloat aperture;
+    CGFloat lensPosition;
+} CameraStatistics;
+
+///Function Prototype declarations
+
+CameraStatistics cameraStatisticsMake(float aperture, float exposureDuration, float ISO, float lensPostion);
+
+@end

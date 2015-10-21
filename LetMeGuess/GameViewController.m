@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #import "DKCircleButton.h"
 #import "RKDropdownAlert.h"
-#import "Constants.h"
+#import "MyConstants.h"
 
 @interface GameViewController ()
 

@@ -8,7 +8,7 @@
 
 #import "LoginViewController.h"
 #import <QuartzCore/QuartzCore.h>
-#import "Constants.h"
+#import "MyConstants.h"
 #import <Parse/Parse.h>
 #import "JVFloatLabeledTextField.h"
 #import "RKDropdownAlert.h"
