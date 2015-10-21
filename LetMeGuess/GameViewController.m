@@ -8,11 +8,12 @@
 
 #import "GameViewController.h"
 #import <Parse/Parse.h>
-#import "AlertUtil.h"
 #import "AccountViewController.h"
 #import "NumbersService.h"
 #include <stdlib.h>
 #import "DKCircleButton.h"
+#import "RKDropdownAlert.h"
+#import "Constants.h"
 
 @interface GameViewController ()
 
@@ -20,12 +21,15 @@
 @property int currentNumber;
 @property (strong, nonatomic) UIActivityIndicatorView *spinner;
 @property (strong, nonatomic) DKCircleButton *startButton;
+@property (assign, nonatomic) BOOL isPLaying;
 
 @end
 
 @implementation GameViewController
 
 int newFactAttempts;
+UIButton *goButton;
+NSString *defaultHelpText;
 
 #pragma mark - View Controller Life Cycle
 
@@ -33,37 +37,53 @@ int newFactAttempts;
     [super viewDidLoad];
     
     [self setupGameScreen];
+    [self updateScore];
+    
+    defaultHelpText = self.hintTextView.text;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
+    self.currentNumber = arc4random_uniform(21);
+    NSLog(@"currentNumber: %d", self.currentNumber);
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillShow)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillHide)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+    
     if (!self.inputTextField.isFirstResponder) {
         [self.inputTextField becomeFirstResponder];
     }
-    
-    //self.currentNumber = arc4random_uniform(51);
-    self.currentNumber = 3;
-    NSLog(@"currentNumber: %d", self.currentNumber);
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
     [self becomeFirstResponder];
-    
+
     if (![PFUser currentUser]) {
         [self showLogin];
-    }
-    
-    
+    }  
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillHideNotification
+                                                  object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillShowNotification
+                                                  object:nil];
+    
     if (self.inputTextField.isFirstResponder) {
-        [self.inputTextField becomeFirstResponder];
+        [self.inputTextField resignFirstResponder];
     }
 }
 
@@ -104,6 +124,7 @@ int newFactAttempts;
 
 - (void)setupGameScreen {
     self.nextHintButton.layer.cornerRadius = 10;
+    [self.nextHintButton setTitleColor:[UIColor brownColor] forState:UIControlStateHighlighted];
     self.hintView.layer.cornerRadius = 10;
     self.timerView.layer.cornerRadius = 10;
     [self.timerLabel setCountDownTime:120];
@@ -122,12 +143,17 @@ int newFactAttempts;
 
 - (void)startStopPressed {
     if ([self.startButton.titleLabel.text isEqualToString:@"Start"]) {
+        [self generateFactPressed:nil];
+        self.isPLaying = YES;
+        self.currentScore = 0;
         [self.timerLabel startWithEndingBlock:^(NSTimeInterval countTime){
             [self handleTimerExpired];
         }];
         [self.startButton setTitle:@"Stop" forState:UIControlStateNormal];
         [self.startButton setBackgroundColor:[UIColor redColor]];
     } else {
+        self.isPLaying = NO;
+        self.hintTextView.text = defaultHelpText;
         [self.timerLabel reset];
         [self.timerLabel pause];
         [self.timerLabel setCountDownTime:120];
@@ -137,7 +163,72 @@ int newFactAttempts;
 }
 
 - (void)handleTimerExpired {
-    NSLog(@"timer expired!");
+    [RKDropdownAlert title:@"TIMES UP!" backgroundColor:ALERT_ERROR_COLOR textColor:[UIColor whiteColor]];
+}
+
+- (void)keyboardWillShow {
+    [self addGoButton];
+}
+
+- (void)keyboardWillHide {
+    [goButton removeFromSuperview];
+}
+
+- (void)goButtonPressed {
+    if (self.isPLaying) {
+        NSString *correctAnswer = [NSString stringWithFormat:@"%d", self.currentNumber];
+        if ([self.inputTextField.text isEqualToString:correctAnswer]) {
+            self.currentScore += 20;
+            [RKDropdownAlert title:@"CORRECT" backgroundColor:ALERT_SUCCESS_COLOR textColor:[UIColor whiteColor]];
+        } else {
+            self.currentScore -= 10;
+            [RKDropdownAlert title:@"WRONG" backgroundColor:ALERT_ERROR_COLOR textColor:[UIColor whiteColor]];
+        }
+    } else {
+        [RKDropdownAlert title:@"Start the timer to begin playing!"];
+    }
+    
+    [self updateScore];
+}
+
+- (void)updateScore {
+    if (self.currentScore == 0) {
+        self.currentScoreLabel.text = @"Current Score:  0";
+        
+        return;
+    }
+    
+    if (self.currentScore > 0) {
+        [self.currentScoreLabel setAttributedText:[self updateScoreLabel:[NSString stringWithFormat:@"Current Score:  %d", self.currentScore] color:[UIColor colorWithRed:0 green:.5 blue:0 alpha:1]]];
+    } else if (self.currentScore < 0) {
+        [self.currentScoreLabel setAttributedText:[self updateScoreLabel:[NSString stringWithFormat:@"Current Score:  %d", self.currentScore] color:[UIColor redColor]]];
+    }
+}
+
+- (void)addGoButton {
+    goButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    goButton.adjustsImageWhenHighlighted = NO;
+    goButton.backgroundColor = [UIColor colorWithRed:0 green:0 blue:.5 alpha:1];
+    [goButton setTitle:@"GO!" forState:UIControlStateNormal];
+    [goButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [goButton setTitleColor:[UIColor colorWithRed:0 green:0 blue:.5 alpha:1] forState:UIControlStateHighlighted];
+    [goButton addTarget:self action:@selector(goButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIView *keyboardView = [[[[[UIApplication sharedApplication] windows] lastObject] subviews] firstObject];
+    [goButton setFrame:CGRectMake(0, keyboardView.frame.size.height - 53, 123, 53)];
+    [keyboardView addSubview:goButton];
+}
+
+- (NSMutableAttributedString *)updateScoreLabel:(NSString *)labelText color:(UIColor *)color {
+    NSMutableAttributedString *attributedTextForLabel = [[NSMutableAttributedString alloc] initWithString:labelText];
+    NSRange start = NSMakeRange(14, 1);
+    NSRange end = NSMakeRange(attributedTextForLabel.length, 1);
+    NSRange location = NSMakeRange(start.location, end.location- start.location);
+    [attributedTextForLabel addAttribute:NSForegroundColorAttributeName value:color range:location];
+    [attributedTextForLabel addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:self.currentScoreLabel.font.pointSize] range:location];
+
+    
+    return attributedTextForLabel;
 }
 
 #pragma mark - Login
@@ -177,11 +268,14 @@ int newFactAttempts;
                 if ([self.currentFact isEqualToString:newFact]) {
                     NSLog(@"Same fact   attempts: %d", newFactAttempts);
                     if (newFactAttempts > 2) {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                           [RKDropdownAlert title:@"There are no new hints"];
+                        });
                         [self hideSpinner];
                         return;
                     } else {
-                        [self getFact:number];
                         newFactAttempts++;
+                        [self getFact:number];
                     }
                 } else {
                     [self parseFact:newFact];

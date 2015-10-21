@@ -19,5 +19,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *nextHintButton;
 @property (weak, nonatomic) IBOutlet MZTimerLabel *timerLabel;
 @property (weak, nonatomic) IBOutlet UIView *timerView;
+@property (weak, nonatomic) IBOutlet UILabel *currentScoreLabel;
+
+@property (assign, nonatomic) int currentScore;
 
 @end

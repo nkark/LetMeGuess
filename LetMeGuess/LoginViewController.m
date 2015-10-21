@@ -10,8 +10,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "Constants.h"
 #import <Parse/Parse.h>
-#import "AlertUtil.h"
 #import "JVFloatLabeledTextField.h"
+#import "RKDropdownAlert.h"
 
 @interface LoginViewController ()
 
@@ -78,9 +78,7 @@
                                             } else if (error) {
                                                 NSString *errorMessage = [error userInfo][@"error"];
                                                 if ([errorMessage isEqualToString:@"invalid login parameters"]) {
-                                                    [AlertUtil showAlertControllerWithMessage:@""
-                                                                                        title:@"Invalid username and/or password. Please try again."
-                                                                                       sender:self];
+                                                    [RKDropdownAlert title:@"Wait!" message:@"Invalid username and/or password. Please try again." backgroundColor:ALERT_ERROR_COLOR textColor:[UIColor whiteColor]];
                                                 }
                                             }
         }];
@@ -100,7 +98,7 @@
                 [self hideAllAndShowSuccess:NO];
             } else if (error) {
                 NSString *errorString = [error userInfo][@"error"];
-                [AlertUtil showAlertControllerWithMessage:@"" title:errorString sender:self];
+                [RKDropdownAlert title:@"Error" message:errorString backgroundColor:ALERT_ERROR_COLOR textColor:[UIColor whiteColor]];
             }
         }];
         
@@ -130,7 +128,7 @@
     if ([message isEqualToString:@"Success"]) {
         return YES;
     } else {
-        [AlertUtil showAlertControllerWithMessage:@"" title:message sender:self];
+        [RKDropdownAlert title:@"Wait!" message:message backgroundColor:ALERT_ERROR_COLOR textColor:[UIColor whiteColor]];
         return NO;
     }
 }

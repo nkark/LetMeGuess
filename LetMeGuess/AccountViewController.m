@@ -7,7 +7,8 @@
 //
 
 #import "AccountViewController.h"
-#import "AlertUtil.h"
+#import "RKDropdownAlert.h"
+#import "Constants.h"
 
 @interface AccountViewController ()
 
@@ -74,7 +75,7 @@
                              }];
         } else if (error) {
             NSString *errMssg = [error userInfo][@"error"];
-            [AlertUtil showAlertControllerWithMessage:@"" title:errMssg sender:self];
+            [RKDropdownAlert title:@"Error" message:errMssg backgroundColor:ALERT_ERROR_COLOR textColor:[UIColor whiteColor]];
         }
     }];
 }
@@ -121,7 +122,7 @@
         if (self.usernameTextField.text.length > 0) {
             [self saveNewUsername:self.usernameTextField.text];
         } else {
-            [AlertUtil showAlertControllerWithMessage:@"" title:@"Username cannot be empty." sender:self];
+            [RKDropdownAlert title:@"Wait!" message:@"Username cannot be empty." backgroundColor:ALERT_ERROR_COLOR textColor:[UIColor whiteColor]];
         }
     }
 }
@@ -149,9 +150,7 @@
             [self dismissViewControllerAnimated:YES completion:nil];
         } else {
             NSString *errMessage = [error userInfo][@"error"];
-            [AlertUtil showAlertControllerWithMessage:@""
-                                                title:errMessage
-                                               sender:self];
+            [RKDropdownAlert title:@"Error" message:errMessage backgroundColor:ALERT_ERROR_COLOR textColor:[UIColor whiteColor]];
         }
     }];
 }

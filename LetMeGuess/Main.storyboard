@@ -58,7 +58,7 @@
                                     <outlet property="delegate" destination="pch-SN-IBp" id="uXu-EQ-UGm"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41k-AI-84A">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41k-AI-84A">
                                 <rect key="frame" x="139" y="429" width="97" height="53"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -70,7 +70,7 @@
                                     <action selector="loginPressed:" destination="pch-SN-IBp" eventType="touchUpInside" id="dnx-7U-FbW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hw-ky-Phc">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hw-ky-Phc">
                                 <rect key="frame" x="127" y="511" width="121" height="53"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -257,6 +257,13 @@
                                                     <action selector="generateFactPressed:" destination="y5D-R2-Ol3" eventType="touchUpInside" id="VNe-qw-gqF"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Score: 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mf0-bj-upe">
+                                                <rect key="frame" x="10" y="337" width="137" height="20"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -265,43 +272,27 @@
                                             <constraint firstItem="zS1-Hd-zkg" firstAttribute="centerY" secondItem="DTH-x2-Cdl" secondAttribute="centerY" id="0tP-l7-Pil"/>
                                             <constraint firstItem="7Gh-NT-gbQ" firstAttribute="centerX" secondItem="DTH-x2-Cdl" secondAttribute="centerX" id="5Jw-xQ-gzh"/>
                                             <constraint firstItem="7Gh-NT-gbQ" firstAttribute="top" secondItem="Ml3-TN-Gdq" secondAttribute="bottom" constant="22" id="61V-vl-pLQ"/>
-                                            <constraint firstItem="Ml3-TN-Gdq" firstAttribute="leading" secondItem="DTH-x2-Cdl" secondAttribute="leading" constant="10" id="6hn-Ma-tVe"/>
-                                            <constraint firstItem="Ml3-TN-Gdq" firstAttribute="top" secondItem="emB-i4-xWy" secondAttribute="bottom" constant="32" id="83d-90-tyg"/>
                                             <constraint firstItem="hLG-be-cEH" firstAttribute="top" secondItem="DTH-x2-Cdl" secondAttribute="top" constant="34" id="9qs-li-87J"/>
                                             <constraint firstItem="IQ9-K5-bSy" firstAttribute="centerX" secondItem="DTH-x2-Cdl" secondAttribute="centerX" id="A9S-92-SJA"/>
-                                            <constraint firstItem="Ml3-TN-Gdq" firstAttribute="top" secondItem="hLG-be-cEH" secondAttribute="bottom" constant="32" id="GPO-v4-p96"/>
                                             <constraint firstItem="Ml3-TN-Gdq" firstAttribute="leading" secondItem="DTH-x2-Cdl" secondAttribute="leading" constant="10" id="Glr-pl-egL"/>
                                             <constraint firstItem="hLG-be-cEH" firstAttribute="centerY" secondItem="IQ9-K5-bSy" secondAttribute="centerY" id="Hup-ct-ueV"/>
+                                            <constraint firstItem="mf0-bj-upe" firstAttribute="leading" secondItem="Ml3-TN-Gdq" secondAttribute="leading" id="MPK-ap-JS0"/>
                                             <constraint firstItem="zS1-Hd-zkg" firstAttribute="centerX" secondItem="DTH-x2-Cdl" secondAttribute="centerX" id="Mbd-kT-spm"/>
                                             <constraint firstItem="emB-i4-xWy" firstAttribute="leading" secondItem="IQ9-K5-bSy" secondAttribute="trailing" constant="40" id="Mcz-Y1-Gsa"/>
                                             <constraint firstAttribute="bottom" secondItem="zS1-Hd-zkg" secondAttribute="bottom" id="SEa-Um-u0p"/>
-                                            <constraint firstItem="Ml3-TN-Gdq" firstAttribute="leading" secondItem="hLG-be-cEH" secondAttribute="leading" id="TS9-05-eYT"/>
                                             <constraint firstItem="IQ9-K5-bSy" firstAttribute="centerY" secondItem="emB-i4-xWy" secondAttribute="centerY" id="UYX-9B-QXe"/>
-                                            <constraint firstAttribute="trailing" secondItem="Ml3-TN-Gdq" secondAttribute="trailing" constant="10" id="YNO-bR-SWu"/>
                                             <constraint firstAttribute="trailing" secondItem="Ml3-TN-Gdq" secondAttribute="trailing" constant="10" id="bdW-h8-Jvb"/>
                                             <constraint firstItem="hLG-be-cEH" firstAttribute="leading" secondItem="DTH-x2-Cdl" secondAttribute="leading" constant="20" id="dpK-5g-sdg"/>
-                                            <constraint firstItem="Ml3-TN-Gdq" firstAttribute="top" secondItem="emB-i4-xWy" secondAttribute="bottom" constant="32" id="e22-Ld-cZl"/>
                                             <constraint firstItem="zS1-Hd-zkg" firstAttribute="leading" secondItem="DTH-x2-Cdl" secondAttribute="leading" id="e6X-cZ-v54"/>
-                                            <constraint firstItem="Ml3-TN-Gdq" firstAttribute="trailing" secondItem="emB-i4-xWy" secondAttribute="trailing" id="fJ6-eQ-pMC"/>
                                             <constraint firstAttribute="bottom" secondItem="7Gh-NT-gbQ" secondAttribute="bottom" constant="240" id="hHH-EN-EXK"/>
                                             <constraint firstItem="IQ9-K5-bSy" firstAttribute="leading" secondItem="hLG-be-cEH" secondAttribute="trailing" constant="40" id="iJc-DW-QhT"/>
                                             <constraint firstAttribute="trailing" secondItem="emB-i4-xWy" secondAttribute="trailing" constant="20" id="oPI-nn-Bjt"/>
                                             <constraint firstItem="zS1-Hd-zkg" firstAttribute="top" secondItem="DTH-x2-Cdl" secondAttribute="top" id="pzC-Rc-iVI"/>
+                                            <constraint firstItem="mf0-bj-upe" firstAttribute="centerY" secondItem="7Gh-NT-gbQ" secondAttribute="centerY" id="ugr-L8-0si"/>
                                             <constraint firstItem="Ml3-TN-Gdq" firstAttribute="top" secondItem="IQ9-K5-bSy" secondAttribute="bottom" constant="22" id="wOa-We-Odx"/>
                                             <constraint firstItem="IQ9-K5-bSy" firstAttribute="top" secondItem="DTH-x2-Cdl" secondAttribute="top" constant="23" id="wTc-f5-sdL"/>
                                             <constraint firstItem="emB-i4-xWy" firstAttribute="top" secondItem="DTH-x2-Cdl" secondAttribute="top" constant="34" id="x5P-Ll-FcD"/>
                                         </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="6hn-Ma-tVe"/>
-                                                <exclude reference="83d-90-tyg"/>
-                                                <exclude reference="GPO-v4-p96"/>
-                                                <exclude reference="TS9-05-eYT"/>
-                                                <exclude reference="YNO-bR-SWu"/>
-                                                <exclude reference="e22-Ld-cZl"/>
-                                                <exclude reference="fJ6-eQ-pMC"/>
-                                            </mask>
-                                        </variation>
                                     </view>
                                 </subviews>
                                 <animations/>
@@ -334,6 +325,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="contentView" destination="DTH-x2-Cdl" id="m3q-Zm-2JS"/>
+                        <outlet property="currentScoreLabel" destination="mf0-bj-upe" id="eji-bv-UE2"/>
                         <outlet property="hintTextView" destination="c8S-at-hS2" id="L0O-97-gCF"/>
                         <outlet property="hintView" destination="Ml3-TN-Gdq" id="hIR-6W-XHW"/>
                         <outlet property="inputTextField" destination="7Gh-NT-gbQ" id="boB-UD-x2X"/>

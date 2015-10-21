@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		941B62331BC4E6F200CF9AF0 /* AlertUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 941B62321BC4E6F200CF9AF0 /* AlertUtil.m */; settings = {ASSET_TAGS = (); }; };
+		941809081BD7483700502F41 /* RKDropdownAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 941809071BD7483700502F41 /* RKDropdownAlert.m */; settings = {ASSET_TAGS = (); }; };
 		941B62351BC4F94400CF9AF0 /* loginSuccessCheck.png in Resources */ = {isa = PBXBuildFile; fileRef = 941B62341BC4F94400CF9AF0 /* loginSuccessCheck.png */; settings = {ASSET_TAGS = (); }; };
 		941B62371BC500B600CF9AF0 /* registrationSuccessCheck.png in Resources */ = {isa = PBXBuildFile; fileRef = 941B62361BC500B600CF9AF0 /* registrationSuccessCheck.png */; settings = {ASSET_TAGS = (); }; };
 		943ED5021BC491480022F35A /* AFBlurSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 943ED4FA1BC491480022F35A /* AFBlurSegue.m */; settings = {ASSET_TAGS = (); }; };
@@ -48,9 +48,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		941809061BD7483700502F41 /* RKDropdownAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKDropdownAlert.h; sourceTree = "<group>"; };
+		941809071BD7483700502F41 /* RKDropdownAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKDropdownAlert.m; sourceTree = "<group>"; };
 		941B622F1BC4DA1100CF9AF0 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		941B62311BC4E6F200CF9AF0 /* AlertUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertUtil.h; sourceTree = "<group>"; };
-		941B62321BC4E6F200CF9AF0 /* AlertUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertUtil.m; sourceTree = "<group>"; };
 		941B62341BC4F94400CF9AF0 /* loginSuccessCheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginSuccessCheck.png; sourceTree = "<group>"; };
 		941B62361BC500B600CF9AF0 /* registrationSuccessCheck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = registrationSuccessCheck.png; sourceTree = "<group>"; };
 		943ED4F91BC491480022F35A /* AFBlurSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFBlurSegue.h; sourceTree = "<group>"; };
@@ -127,11 +127,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		941809091BD74A4700502F41 /* Dropdown Alert */ = {
+			isa = PBXGroup;
+			children = (
+				941809061BD7483700502F41 /* RKDropdownAlert.h */,
+				941809071BD7483700502F41 /* RKDropdownAlert.m */,
+			);
+			name = "Dropdown Alert";
+			sourceTree = "<group>";
+		};
 		941B62301BC4E6D700CF9AF0 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				941B62311BC4E6F200CF9AF0 /* AlertUtil.h */,
-				941B62321BC4E6F200CF9AF0 /* AlertUtil.m */,
+				941809091BD74A4700502F41 /* Dropdown Alert */,
+				944B181A1BD018CA00879C55 /* DKCircle Button */,
+				946076451BC74B22009776A3 /* Game Timer */,
+				94FC108B1BC5FBC000E69BD3 /* Floating Text Field */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -241,9 +252,6 @@
 		94C1772E1BC4792600E4FEB3 /* LetMeGuess */ = {
 			isa = PBXGroup;
 			children = (
-				944B181A1BD018CA00879C55 /* DKCircle Button */,
-				946076451BC74B22009776A3 /* Game Timer */,
-				94FC108B1BC5FBC000E69BD3 /* Floating Text Field */,
 				941B62301BC4E6D700CF9AF0 /* Utils */,
 				943ED50E1BC491FF0022F35A /* Main.storyboard */,
 				941B622F1BC4DA1100CF9AF0 /* Constants.h */,
@@ -367,7 +375,7 @@
 				943ED5061BC491480022F35A /* UIImage+ImageEffects.m in Sources */,
 				944B18181BD0115200879C55 /* DKCircleButton.m in Sources */,
 				946076481BC74B33009776A3 /* MZTimerLabel.m in Sources */,
-				941B62331BC4E6F200CF9AF0 /* AlertUtil.m in Sources */,
+				941809081BD7483700502F41 /* RKDropdownAlert.m in Sources */,
 				94C177311BC4792600E4FEB3 /* main.m in Sources */,
 				943ED5021BC491480022F35A /* AFBlurSegue.m in Sources */,
 				944B95481BC5E76800A0C7AF /* AccountViewController.m in Sources */,
