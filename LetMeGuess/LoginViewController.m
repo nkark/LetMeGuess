@@ -27,6 +27,8 @@
 
 @implementation LoginViewController
 
+BOOL isKeyboardShowing;
+
 #pragma mark - View Controller Life Cycle
 
 - (void)viewDidLoad {
@@ -208,11 +210,17 @@
 }
 
 - (void)keyboardWillShow {
-    [self adjustViewForKeyboard];
+    if (!isKeyboardShowing) {
+        [self adjustViewForKeyboard];
+        isKeyboardShowing = YES;
+    }
 }
 
 - (void)keyboardWillHide {
-    [self adjustViewForKeyboard];
+    if (isKeyboardShowing) {
+        [self adjustViewForKeyboard];
+        isKeyboardShowing = NO;
+    }
 }
 
 - (void)registerKeyboard {
