@@ -20,8 +20,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *signUpButton;
 @property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *emailTextField;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *logoImageTopSpaceConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *signInButtonTopSpaceConstraint;
 
 @end
 
@@ -68,6 +70,7 @@ BOOL isKeyboardShowing;
 }
 
 - (IBAction)loginPressed:(id)sender {
+    [self hideEmailField];
     if ([self validateInput]) {
         [self dismissKeyboard];
         
@@ -88,26 +91,83 @@ BOOL isKeyboardShowing;
 }
 
 - (IBAction)signUpPressed:(id)sender {
+    if (self.emailTextField.isHidden) {
+        [self showEmailField];
+    } else {
+        [self signUp];
+    }
+}
+
+- (void)signUp {
     if ([self validateInput]) {
-        [self dismissKeyboard];
-        
-        PFUser *newUser = [PFUser user];
-        newUser.username = self.usernameTextField.text;
-        newUser.password = self.passwordTextField.text;
- 
-        [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (succeeded) {
-                [self hideAllAndShowSuccess:NO];
-            } else if (error) {
-                NSString *errorString = [error userInfo][@"error"];
-                [RKDropdownAlert title:@"Error" message:errorString backgroundColor:ALERT_ERROR_COLOR textColor:[UIColor whiteColor]];
-            }
-        }];
-        
+        if ([self validateEmail:self.emailTextField.text]) {
+            PFUser *newUser = [PFUser user];
+            newUser.username = self.usernameTextField.text;
+            newUser.password = self.passwordTextField.text;
+            newUser.email = self.emailTextField.text;
+            
+            [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    [self hideAllAndShowSuccess:NO];
+                } else if (error) {
+                    NSString *errorString = [error userInfo][@"error"];
+                    [RKDropdownAlert title:@"Error" message:errorString backgroundColor:ALERT_ERROR_COLOR textColor:[UIColor whiteColor]];
+                }
+            }];
+        }
+    }
+}
+
+- (BOOL)validateEmail:(NSString *) emailString {
+    NSString *emailRegex =
+    @"(?:[a-z0-9!#$%\\&'*+/=?\\^_`{|}~-]+(?:\\.[a-z0-9!#$%\\&'*+/=?\\^_`{|}"
+    @"~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\"
+    @"x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-"
+    @"z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5"
+    @"]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-"
+    @"9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21"
+    @"-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES[c] %@", emailRegex];
+    
+    if ([emailTest evaluateWithObject:emailString]) {
+        return YES;
+    } else {
+        [RKDropdownAlert title:@"Wait!" message:@"Please enter a valid email address." backgroundColor:ALERT_ERROR_COLOR textColor:[UIColor whiteColor]];
+        return NO;
     }
 }
 
 #pragma mark - Utiliy
+
+- (void)showEmailField {
+    self.signInButtonTopSpaceConstraint.constant += 60;
+    self.emailTextField.frame = CGRectMake(self.emailTextField.frame.origin.x, self.emailTextField.frame.origin.y, self.emailTextField.frame.size.width, 0);
+    self.emailTextField.hidden = NO;
+    
+    [UIView animateWithDuration:1
+                     animations:^{
+                         [self.view layoutIfNeeded];
+                         self.emailTextField.frame = CGRectMake(self.emailTextField.frame.origin.x, self.emailTextField.frame.origin.y, self.emailTextField.frame.size.width, 42);
+                     }
+                     completion:^(BOOL finished) {
+                     }];
+}
+
+- (void)hideEmailField {
+    self.signInButtonTopSpaceConstraint.constant -= 60;
+    
+    [UIView animateWithDuration:1
+                     animations:^{
+                         [self.view layoutIfNeeded];
+                         self.emailTextField.frame = CGRectMake(self.emailTextField.frame.origin.x, self.emailTextField.frame.origin.y, self.emailTextField.frame.size.width, 0);
+                     }
+                     completion:^(BOOL finished) {
+                         if (finished) {
+                             self.emailTextField.hidden = YES;
+                         }
+                     }];
+    
+}
 
 - (BOOL)validateInput {
     NSString *message = @"Success";
@@ -121,10 +181,6 @@ BOOL isKeyboardShowing;
     if (self.passwordTextField.text.length == 0){
         message = @"Password cannot be empty.";
         inputErrors++;
-    }
-    
-    if (inputErrors == 2) {
-        message = @"Username and Password cannot be empty.";
     }
     
     if ([message isEqualToString:@"Success"]) {
@@ -157,6 +213,15 @@ BOOL isKeyboardShowing;
                         self.passwordTextField.hidden = YES;
                     }
                     completion:nil];
+    if (!self.emailTextField.isHidden) {
+        [UIView transitionWithView:self.emailTextField
+                          duration:1
+                           options:UIViewAnimationOptionTransitionFlipFromRight
+                        animations:^{
+                            self.emailTextField.hidden = YES;
+                        }
+                        completion:nil];
+    }
     [UIView transitionWithView:self.loginButton
                       duration:1
                        options:UIViewAnimationOptionTransitionFlipFromRight
@@ -207,6 +272,7 @@ BOOL isKeyboardShowing;
 - (void)dismissKeyboard {
     [self.usernameTextField resignFirstResponder];
     [self.passwordTextField resignFirstResponder];
+    [self.emailTextField resignFirstResponder];
 }
 
 - (void)keyboardWillShow {
@@ -253,6 +319,12 @@ BOOL isKeyboardShowing;
                          [self.view layoutIfNeeded];
                      }
                      completion:nil];
+}
+
+- (void)touchesBegan:(NSSet *)touches
+           withEvent:(UIEvent *)event {
+    [self dismissKeyboard];
+    
 }
 
 #pragma mark - Text Field Delegate
